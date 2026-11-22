@@ -1,0 +1,308 @@
+/* 留言页：对话是唯一主角，单栏阅读宽度。 */
+.letters-heading,
+.letters-workspace {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.letters-heading {
+  padding-block: var(--space-12) var(--space-6);
+  border-bottom: 1px dashed var(--rule);
+}
+
+.letters-heading h1 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(32px, 4.6vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.letters-heading .overprint {
+  text-shadow: 0.04em 0.03em 0 color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.letters-heading > p {
+  color: var(--deep);
+  font-size: 16px;
+}
+
+.letters-heading .now.is-compact {
+  margin-top: var(--space-4);
+}
+
+.letters-workspace {
+  min-width: 0;
+  min-height: 360px;
+  padding-block: var(--space-6) var(--space-12);
+}
+
+/* 最近一次读信：和作息那行同一种排法，印章加一句话，不另起卡片。 */
+.run-status {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding-block: var(--space-3) var(--space-4);
+  border-bottom: 2px dotted var(--rule);
+  color: var(--deep);
+  font-size: 14px;
+}
+
+.run-reason {
+  margin-top: var(--space-1);
+  font-weight: 700;
+}
+
+.run-status .small-note {
+  margin-top: var(--space-1);
+}
+
+.run-status.is-unavailable {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* 书信列表底部的读信记录脚注：用轻柔虚线分隔，不抢信封的位置。 */
+.run-status.is-footnote {
+  margin-bottom: 0;
+  padding-block: var(--space-4) 0;
+  border-top: 1px dashed var(--rule);
+  border-bottom: 0;
+  font-size: 13px;
+}
+
+/* 信件列表 */
+.history-title {
+  margin-bottom: var(--space-6);
+  font-size: 20px;
+}
+
+/* 展开更早的信接在按钮下面往下读，不让浏览器为了锚定把它们推到视口上方。 */
+.message-list {
+  overflow-anchor: none;
+  display: grid;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.message-entry.is-visitor {
+  margin-right: 10%;
+}
+
+.message-entry.is-milo {
+  margin-left: 6%;
+}
+
+.slip-enter-active {
+  transition:
+    opacity 450ms var(--ease-paper),
+    transform 450ms var(--ease-paper);
+}
+
+.slip-enter-from {
+  opacity: 0;
+  transform: translateY(-16px) rotate(-1deg);
+}
+
+.message-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.message-meta strong {
+  color: var(--ink);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.message-body {
+  margin-top: var(--space-3);
+  color: var(--deep);
+  font-size: 17px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.visitor-slip {
+  padding-right: 96px;
+}
+
+.slip-postmark {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  opacity: 0.85;
+}
+
+.message-state {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.state-chip {
+  padding: 0 8px;
+  border: var(--line-width) solid var(--soft);
+  border-radius: var(--radius-chip);
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.state-chip.is-waiting {
+  border-color: var(--atext);
+  color: var(--atext);
+}
+
+.reply-sheet {
+  /* 方格纸是米洛回信的身份，格线放轻，长信读着不花。 */
+  --gridline: color-mix(in srgb, var(--ink) 9%, #fff);
+  padding: var(--space-8) var(--space-8) var(--space-6);
+}
+
+.reply-sheet .message-body {
+  margin-top: var(--space-2);
+}
+
+.reply-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  color: var(--deep);
+}
+
+.empty-history {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-6);
+  color: var(--soft);
+}
+
+.history-more {
+  display: block;
+  margin: 0 auto var(--space-6);
+}
+
+.history-more.is-failed {
+  color: var(--error);
+}
+
+/* 写信框 */
+.letter-composer {
+  margin-top: var(--space-12);
+}
+
+.letter-composer label {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.composer-paper {
+  position: relative;
+  transition:
+    transform 300ms var(--ease-paper),
+    box-shadow 300ms ease;
+}
+
+.letter-composer textarea {
+  min-height: 176px;
+  padding: 14px 16px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.letter-composer.is-lifting .composer-paper {
+  transform: translateY(-4px) rotate(-0.4deg);
+}
+
+.letter-composer.is-lifting textarea {
+  box-shadow: 6px 10px 0 var(--shade);
+}
+
+.composer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.composer-count {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.composer-send {
+  flex: none;
+  min-height: 52px;
+  padding-inline: 28px;
+  font-size: 17px;
+}
+
+.composer-done {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 52px;
+  margin-top: var(--space-4);
+  color: var(--deep);
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .letters-heading {
+    padding-block: var(--space-6) var(--space-4);
+  }
+
+  .letters-workspace {
+    padding-block: var(--space-4) var(--space-8);
+  }
+
+  .run-status {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .message-entry.is-visitor,
+  .message-entry.is-milo {
+    margin-inline: 0;
+  }
+
+  .visitor-slip {
+    padding: var(--space-4) var(--space-4) var(--space-4);
+  }
+
+  .slip-postmark {
+    position: static;
+    float: right;
+    width: 56px;
+    height: 56px;
+    margin: -4px -4px var(--space-1) var(--space-2);
+  }
+
+  .reply-sheet {
+    padding: var(--space-6) var(--space-4) var(--space-4);
+  }
+
+  .composer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,111 @@
+/* 会话排队与自动服务状态块：温和暖纸层次，不铺监控指标，也不把未知写成在线。 */
+.conv-status {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--deep);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.conv-status.is-inline {
+  display: grid;
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 14%, var(--paper));
+  border-radius: var(--radius-chip);
+  background: color-mix(in srgb, var(--paper) 58%, var(--sheet));
+}
+
+.conv-status.is-inline.is-live::before {
+  display: none;
+}
+
+.conv-status.is-tone-warn {
+  border-color: color-mix(in srgb, var(--atext) 35%, var(--paper));
+  background: color-mix(in srgb, var(--accent) 7%, var(--sheet));
+}
+
+.conv-status-main {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.conv-status-headline {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  color: var(--deep);
+  font-weight: 500;
+}
+
+.conv-status.is-tone-muted .conv-status-headline {
+  color: var(--soft);
+}
+
+.conv-status-headline.is-live {
+  color: var(--deep);
+  font-weight: 600;
+}
+
+.conv-status-headline.is-live::before {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: '';
+  transform: translateY(-1px);
+}
+
+.conv-status-headline.is-warn {
+  color: var(--atext);
+  font-weight: 600;
+}
+
+.conv-status-detail {
+  color: var(--deep);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.conv-status-revisit {
+  color: var(--deep);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.conv-status-reception {
+  color: var(--deep);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.conv-status-service {
+  margin-top: 2px;
+  padding-top: var(--space-1);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 14%, var(--paper));
+  color: var(--soft);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.conv-status.is-tone-warn .conv-status-service {
+  color: var(--deep);
+}
+
+.conv-status-offline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+
+.conv-status-actions {
+  margin-top: 2px;
+}
+
+.conv-status-recheck {
+  min-height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+}

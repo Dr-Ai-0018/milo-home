@@ -1,0 +1,27 @@
+# Render with scripts/render-deployment.py; no model credentials in this service.
+[Unit]
+Description=Milo Home bounded storage maintenance and observation
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+WorkingDirectory=@@WORKING_DIRECTORY@@
+Environment=@@CONFIG_ENV@@
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+ExecStart=@@PYTHON@@ -m milo_home.maintenance_monitor --config @@CONFIG_ARG@@
+Restart=no
+TimeoutStartSec=50
+TimeoutStopSec=10
+KillSignal=SIGTERM
+KillMode=mixed
+UMask=0077
+CPUQuota=50%
+CPUQuotaPeriodSec=10ms
+AllowedCPUs=@@CPUS@@
+CPUAffinity=@@AFFINITY@@
+MemoryMax=768M
+TasksMax=32
+

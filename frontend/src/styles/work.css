@@ -1,0 +1,385 @@
+/* 交办：一件事一张交办单，夹在木夹板上，每一步盖一枚章。 */
+.work-desk {
+  max-width: 760px;
+  min-width: 0;
+  margin-inline: auto;
+  padding-block: var(--space-8) var(--space-16);
+}
+
+.work-heading {
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 2px dotted var(--rule);
+}
+
+.work-heading h1 {
+  margin-bottom: var(--space-3);
+  font-size: clamp(36px, 5vw, 52px);
+}
+
+.work-heading > p {
+  color: var(--deep);
+}
+
+.work-offline,
+.work-heading > .work-offline {
+  margin-top: var(--space-2);
+  color: var(--atext);
+  font-size: 13px;
+}
+
+.work-desk .back-link {
+  display: inline-flex;
+  margin-bottom: var(--space-2);
+  font-size: 14px;
+}
+
+.work-task-page > .work-offline {
+  margin-bottom: var(--space-6);
+}
+
+.work-desk .empty-history {
+  padding-block: var(--space-6);
+  color: var(--soft);
+}
+
+/* 单子上的字 */
+.sheet-no {
+  color: var(--soft);
+  font-family: var(--font-num);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.sheet-title {
+  margin: var(--space-1) 0 var(--space-3);
+  font-size: clamp(20px, 3.4vw, 26px);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.sheet-rows {
+  margin: 0;
+}
+
+.sheet-rows > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 3px 0 5px;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, #fff);
+}
+
+.sheet-rows dt,
+.sheet-label {
+  color: var(--soft);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.sheet-rows dd {
+  margin: 0;
+  text-align: right;
+}
+
+.sheet-rows .state-needs_reconciliation,
+.sheet-rows .state-failed {
+  color: var(--atext);
+}
+
+.sheet-note {
+  margin-top: var(--space-2);
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.sheet-note.is-warning {
+  color: var(--atext);
+}
+
+.sheet-label {
+  margin-bottom: var(--space-1);
+}
+
+.sheet-body,
+.task-stamps,
+.turn-answers {
+  margin-top: var(--space-4);
+  padding-top: var(--space-2);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 22%, #fff);
+}
+
+.task-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.task-artifacts {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-artifacts summary {
+  padding-block: var(--space-1);
+  cursor: pointer;
+}
+
+.task-artifacts summary .small-note {
+  display: block;
+}
+
+.artifact-path,
+.artifact-content,
+.artifact-digest {
+  overflow-wrap: anywhere;
+}
+
+.artifact-content {
+  margin-block: var(--space-2);
+  white-space: pre-wrap;
+}
+
+.task-body.is-folded {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+.task-extras {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+/* 印章区：方章依次排开、互相压一点；结论章压在右上角。 */
+.stamp-field {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px 2px;
+  min-height: 112px;
+  padding: 18px 108px 12px 14px;
+}
+
+.stamp-field > .rubber-stamp {
+  margin-block: -6px !important;
+}
+
+.stamp-verdicts {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.stamp-verdicts > * + * {
+  margin-right: -64px;
+}
+
+.work-log {
+  margin-top: var(--space-2);
+  font-size: 13px;
+}
+
+.work-log summary {
+  width: fit-content;
+  color: var(--soft);
+  cursor: pointer;
+}
+
+.work-log ol {
+  display: grid;
+  gap: 2px;
+  margin: var(--space-2) 0 0;
+  padding-left: 1.6em;
+}
+
+.work-log time {
+  margin-right: var(--space-2);
+  color: var(--soft);
+  font-family: var(--font-num);
+  font-size: 12px;
+}
+
+/* 每一轮 */
+.turn-answer + .turn-answer {
+  margin-top: var(--space-4);
+}
+
+.turn-head {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.turn-head time {
+  font-family: var(--font-num);
+  font-size: 12px;
+}
+
+.answer-label {
+  margin-top: var(--space-2);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.answer-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.answer-missing {
+  margin-top: var(--space-1);
+  color: var(--atext);
+  font-size: 14px;
+}
+
+.turn-actions {
+  margin-top: var(--space-2);
+  font-size: 13px;
+}
+
+/* 停下、补话 */
+.task-stop {
+  margin-top: var(--space-6);
+}
+
+.stop-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.task-stop p {
+  flex-basis: 100%;
+  color: var(--atext);
+}
+
+.work-composer {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.clip-sheet .work-composer {
+  margin-top: var(--space-2);
+}
+
+.work-composer label {
+  color: var(--deep);
+  font-weight: 500;
+}
+
+.work-composer textarea,
+.deliverable-field input {
+  width: 100%;
+  padding: var(--space-3);
+  border: var(--line-width) solid var(--rule);
+  border-radius: var(--radius-paper);
+  background: var(--sheet);
+  color: var(--deep);
+  font: inherit;
+}
+
+.work-composer textarea {
+  min-height: 7.5em;
+  resize: vertical;
+}
+
+.deliverable-field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.work-composer textarea:focus-visible,
+.deliverable-field input:focus-visible {
+  border-color: var(--ink);
+  outline: 2px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  outline-offset: 1px;
+}
+
+.composer-held {
+  color: var(--atext);
+  font-size: 13px;
+}
+
+.composer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+/* 交办列表：一排挂起来的小单子，边上一道状态色。 */
+.new-task {
+  margin-bottom: var(--space-8);
+}
+
+.task-hooks ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-tag {
+  display: grid;
+  gap: var(--space-1);
+  height: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: var(--line-width) solid var(--rule);
+  border-left: 6px solid var(--wood, #b48f5c);
+  border-radius: 2px var(--radius-paper) var(--radius-paper) 2px;
+  background: #fffdf7;
+  color: var(--deep);
+  text-decoration: none;
+  transition: transform var(--duration-press) var(--ease-paper);
+}
+
+.task-tag:hover {
+  transform: translateY(-2px) rotate(-0.4deg);
+}
+
+.task-tag-title {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.task-tag-state {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.task-tag.is-completed,
+.task-tag.is-cancelled,
+.task-tag.is-timed_out,
+.task-tag.is-failed {
+  border-left-color: var(--stamp);
+}
+
+.task-tag.is-needs_reconciliation {
+  border-left-style: dashed;
+  border-left-color: #6e717c;
+}
+
+.task-tag.is-needs_reconciliation .task-tag-state,
+.task-tag.is-failed .task-tag-state {
+  color: var(--atext);
+}
+
+@media (max-width: 560px) {
+  .stamp-field {
+    padding-right: 92px;
+  }
+}

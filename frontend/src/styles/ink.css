@@ -1,0 +1,279 @@
+/* 手绘层组件：只负责点缀，结构与交互仍由页面的语义元素承担。 */
+
+/* 圈选与下划线 */
+.ink-scribble {
+  position: relative;
+  display: inline-block;
+}
+
+.ink-scribble-mark {
+  position: absolute;
+  inset: -10px -14px;
+  width: calc(100% + 28px);
+  height: calc(100% + 20px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.ink-scribble.is-underline .ink-scribble-mark {
+  inset: auto -4px -10px;
+  width: calc(100% + 8px);
+  height: 14px;
+}
+
+.ink-scribble-mark path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  /* 圆头描边在长度为零时仍会留下一个点，未画出时一并隐藏。 */
+  opacity: 0;
+  transition:
+    stroke-dashoffset 600ms var(--ease-paper),
+    opacity 80ms linear;
+}
+
+.ink-scribble.is-active .ink-scribble-mark path,
+a:hover .ink-scribble-mark path,
+a:focus-visible .ink-scribble-mark path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+/* 印章 */
+.ink-stamp,
+.ink-stamp:hover,
+.ink-stamp:active {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 0;
+  padding: 10px 22px;
+  border: 4px double var(--stamp);
+  border-radius: 6px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--stamp);
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  white-space: nowrap;
+  /* 印章保持自身宽度，放进网格或弹性布局时也不被拉伸。 */
+  justify-self: start;
+  align-self: center;
+  width: fit-content;
+  opacity: 0.92;
+  mix-blend-mode: multiply;
+  transform: rotate(var(--tilt, -7deg));
+}
+
+button.ink-stamp {
+  cursor: pointer;
+}
+
+.ink-stamp.is-md,
+.ink-stamp.is-md:hover {
+  padding: 6px 14px;
+  border-width: 3px;
+  font-size: 22px;
+}
+
+/* 小号印章不算大字，改用深一级的油墨保证对比度。 */
+.ink-stamp.is-sm,
+.ink-stamp.is-sm:hover {
+  padding: 2px 10px;
+  border-width: 3px;
+  border-color: var(--atext);
+  color: var(--atext);
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+
+.ink-stamp.is-pop {
+  animation: ink-stamp-press-a 550ms var(--ease-stamp) both;
+}
+
+.ink-stamp.is-press-a {
+  animation: ink-stamp-press-a 550ms var(--ease-stamp);
+}
+
+.ink-stamp.is-press-b {
+  animation: ink-stamp-press-b 550ms var(--ease-stamp);
+}
+
+@keyframes ink-stamp-press-a {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--tilt)) scale(1.35);
+  }
+  60% {
+    opacity: 0.95;
+    transform: rotate(calc(var(--tilt) - 1deg)) scale(0.96);
+  }
+  100% {
+    opacity: 0.92;
+    transform: rotate(var(--tilt)) scale(1);
+  }
+}
+
+@keyframes ink-stamp-press-b {
+  0% {
+    opacity: 0;
+    transform: rotate(var(--tilt)) scale(1.35);
+  }
+  60% {
+    opacity: 0.95;
+    transform: rotate(calc(var(--tilt) - 1deg)) scale(0.96);
+  }
+  100% {
+    opacity: 0.92;
+    transform: rotate(var(--tilt)) scale(1);
+  }
+}
+
+/* 休息时唯一保留的小循环。 */
+.ink-zzz {
+  align-self: flex-start;
+  font-family: var(--font-hand);
+  font-size: 0.55em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.ink-zzz span {
+  display: inline-block;
+  animation: ink-zzz 2.4s ease-in-out infinite;
+}
+
+.ink-zzz span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.ink-zzz span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes ink-zzz {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+}
+
+/* 胶带 */
+.ink-tape {
+  display: block;
+  height: 24px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--accent) 55%, transparent);
+  transform: rotate(var(--tilt, -6deg));
+  transition: transform 300ms var(--ease-stamp);
+  pointer-events: none;
+}
+
+/* 手写旁白 */
+.hand-note {
+  display: inline-block;
+  transform: rotate(var(--tilt, -3deg));
+}
+
+.hand-note.is-sm {
+  font-size: 20px;
+}
+
+.hand-note.is-md {
+  font-size: 24px;
+}
+
+.hand-note.is-lg {
+  font-size: 32px;
+}
+
+/* 纸面 */
+.paper-sheet {
+  position: relative;
+  padding: var(--space-6);
+  border-radius: var(--radius-paper);
+  background-color: var(--sheet);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    6px 8px 0 var(--shade);
+  transform: rotate(var(--tilt, 0deg));
+  transition:
+    transform 400ms var(--ease-paper),
+    box-shadow 300ms ease;
+}
+
+.paper-sheet.is-ruled {
+  background-image: repeating-linear-gradient(transparent 0 29px, var(--gridline) 29px 30px);
+  background-position: 0 var(--space-6);
+}
+
+.paper-sheet-tape {
+  position: absolute;
+  top: -12px;
+  z-index: 1;
+}
+
+.paper-sheet-tape.is-left {
+  left: 24px;
+}
+
+.paper-sheet-tape.is-right {
+  right: 32px;
+}
+
+/* 圆章与邮戳 */
+.round-seal {
+  flex: none;
+  transform: rotate(-8deg);
+}
+
+.round-seal circle {
+  fill: none;
+  stroke: var(--stamp);
+}
+
+.round-seal text {
+  fill: var(--stamp);
+  font-family: var(--font-body);
+  font-weight: 900;
+  text-anchor: middle;
+}
+
+.postmark {
+  flex: none;
+}
+
+.postmark circle {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.postmark text {
+  fill: var(--ink);
+  font-family: var(--font-body);
+}
+
+.postmark-ring {
+  letter-spacing: 2px;
+}
+
+.postmark-date,
+.postmark-time {
+  text-anchor: middle;
+}
+
+.postmark-date {
+  font-weight: 900;
+}

@@ -1,0 +1,214 @@
+/* 正式首页与预览共用的门口主舞台样式：收敛字重、减弱重影，把最暖的橙留给窗景。 */
+.home-page {
+  padding-block: var(--space-4) var(--space-12);
+}
+
+.home-preview-page {
+  padding-bottom: var(--space-12);
+}
+
+.home-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.home-stage-schedule,
+.home-stage-works,
+.home-stage-notes {
+  grid-column: 1 / -1;
+}
+
+.home-masthead {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.arrival-leaf {
+  position: absolute;
+  top: -8px;
+  left: 204px;
+  z-index: 1;
+  animation: arrival-leaf 1.6s cubic-bezier(0.3, 0.7, 0.4, 1) both;
+  pointer-events: none;
+}
+
+.arrival-leaf path:first-child {
+  fill: var(--accent);
+}
+
+.arrival-leaf path:last-child {
+  fill: none;
+  stroke: var(--atext);
+  stroke-width: 1.4;
+}
+
+@keyframes arrival-leaf {
+  0% {
+    opacity: 0;
+    transform: translate(-48px, -170px) rotate(-42deg) scale(0.92);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(12px, -96px) rotate(18deg) scale(1);
+  }
+  65% {
+    transform: translate(-10px, -32px) rotate(-18deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(-10deg);
+  }
+}
+
+.home-title {
+  margin: 0;
+  font-size: clamp(36px, 4.8vw, 56px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+/* 标题保留一点轻套印余韵，不与右面暖橙窗景争第一眼。 */
+.home-title.overprint {
+  text-shadow: 0.04em 0.03em 0 color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+.home-intro {
+  max-width: 36em;
+  margin-top: var(--space-3);
+  color: var(--deep);
+  font-size: clamp(16px, 1.32vw, 17px);
+  line-height: 1.75;
+}
+
+.home-entrance {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.entrance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+}
+
+.entrance-actions .button:not(.text-button) {
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--accent) 72%, var(--paper));
+}
+
+.entrance-actions .button:not(.text-button):hover {
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 82%, var(--paper));
+}
+
+.entrance-tertiary-link {
+  padding-inline: var(--space-1);
+  color: var(--ink);
+}
+
+.entrance-guidance {
+  max-width: 38em;
+  color: var(--soft);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.entrance-guidance.is-warn {
+  color: var(--error);
+}
+
+.entrance-feedback-slot {
+  min-height: 36px;
+}
+
+.entrance-retry-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  color: var(--error);
+  font-size: 14px;
+}
+
+.entrance-retry-btn {
+  min-height: 36px;
+  color: var(--error);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.entrance-restored-note {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 窗边静物回归纸面呼吸感，不套硬白框，保留原有橘色网点映衬。 */
+.home-window-hero-art {
+  position: relative;
+}
+
+.home-window-hero-art::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  right: -14px;
+  width: 240px;
+  height: 180px;
+  border-radius: 50%;
+  background-image: radial-gradient(var(--accent) 1.3px, transparent 1.6px);
+  background-size: 8px 8px;
+  mix-blend-mode: multiply;
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.home-window-hero-art .window-scene {
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .home-stage {
+    grid-template-columns: 1fr;
+  }
+
+  /* 窄屏视觉排序：标题与主动作先出，作息、作品与近况依次展开，窗景收小落底不挡路。 */
+  .home-window-hero-copy {
+    order: 1;
+  }
+  .home-stage-schedule {
+    order: 2;
+  }
+  .home-stage-works {
+    order: 3;
+  }
+  .home-stage-notes {
+    order: 4;
+  }
+  .home-window-hero-art {
+    order: 5;
+    width: 100%;
+    max-width: 310px;
+    margin-inline: auto;
+  }
+
+  .home-window-hero-art .window-scene figcaption {
+    padding-inline: 0;
+  }
+
+  .home-stage .paper-sheet {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .entrance-actions .button:not(.text-button) {
+    flex: 1 1 auto;
+  }
+}

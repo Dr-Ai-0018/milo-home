@@ -1,0 +1,72 @@
+/* 夹板：木板、夹子、垫在下面的两张纸和打了孔的交办单。 */
+.clip-board {
+  --wood: #b48f5c;
+  --wood-edge: #8a6a3e;
+  position: relative;
+  padding: 30px 14px 16px;
+  border-radius: 6px;
+  background-color: var(--wood);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.55' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.22 0 0 0 0 0.1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)'/%3E%3C/svg%3E");
+  box-shadow:
+    inset 0 0 0 1.5px var(--wood-edge),
+    inset 0 2px 0 #d1b083,
+    0 3px 0 color-mix(in srgb, var(--wood-edge) 40%, transparent);
+}
+
+.clip-under {
+  position: absolute;
+  inset: 36px 20px 10px 16px;
+  border-radius: 2px;
+  background: #f4efe3;
+  box-shadow: 1px 2px 0 var(--wood-edge);
+  transform: rotate(1.4deg);
+}
+
+.clip-under.is-second {
+  inset: 38px 14px 12px 22px;
+  background: #ece5d4;
+  transform: rotate(-1deg);
+}
+
+.clip-metal {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  z-index: 2;
+  width: 132px;
+  height: 46px;
+  transform: translateX(-50%);
+}
+
+.clip-sheet {
+  position: relative;
+  isolation: isolate;
+  padding: 22px clamp(14px, 4vw, 28px) 22px;
+  border-radius: 2px;
+  background-color: #fffdf7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='9'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23p)'/%3E%3C/svg%3E");
+  box-shadow: 2px 3px 0 var(--wood-edge);
+  color: var(--deep);
+}
+
+.clip-hole {
+  position: absolute;
+  top: 9px;
+  left: 22%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--wood);
+  box-shadow: inset 0 1px 0 var(--wood-edge);
+}
+
+.clip-hole.is-right {
+  right: 22%;
+  left: auto;
+}
+
+@media (max-width: 560px) {
+  .clip-board {
+    padding-inline: 8px;
+  }
+}

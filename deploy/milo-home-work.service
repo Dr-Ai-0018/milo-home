@@ -1,0 +1,27 @@
+# Render with scripts/render-deployment.py; never enable before registration.
+[Unit]
+Description=Milo Home work queue (one task at most)
+After=network.target
+
+[Service]
+Type=exec
+User=root
+Group=root
+WorkingDirectory=@@WORKING_DIRECTORY@@
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+LoadCredential="provider-key:@@CREDENTIAL@@"
+ExecStart=@@PYTHON@@ -m milo_home.cli --config @@CONFIG_ARG@@ --run-directory @@NATIVE_HOME@@ work take-next --owner @@OWNER@@ --session @@SESSION@@ --credential-file %d/provider-key --execute
+Restart=no
+RuntimeMaxSec=3660
+TimeoutStartSec=30
+TimeoutStopSec=45
+KillSignal=SIGTERM
+KillMode=mixed
+UMask=0077
+CPUQuota=50%
+CPUQuotaPeriodSec=10ms
+AllowedCPUs=@@CPUS@@
+CPUAffinity=@@AFFINITY@@
+MemoryMax=768M
+TasksMax=64

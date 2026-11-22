@@ -1,0 +1,321 @@
+/* 米洛现在：状态印章、一句话说明和作息圆环。 */
+.now {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  align-items: center;
+  gap: var(--space-12);
+  padding-block: var(--space-12);
+}
+
+.now-title {
+  margin-bottom: var(--space-6);
+  color: var(--soft);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.now-stamp-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8) var(--space-12);
+  flex-wrap: wrap;
+}
+
+.now-stamp-wrap {
+  position: relative;
+  flex: none;
+  padding-block: var(--space-2);
+}
+
+.now-stamp-aside {
+  position: absolute;
+  top: -26px;
+  left: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.now-stamp-wrap:hover .now-stamp-aside,
+.now-stamp-wrap:focus-within .now-stamp-aside {
+  opacity: 1;
+}
+
+.now-words {
+  flex: 1 1 260px;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.now-line {
+  max-width: 26em;
+  color: var(--deep);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.now-aside {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.now-aside .hand-note {
+  font-size: 26px;
+}
+
+.now-aside path {
+  fill: none;
+  stroke: var(--atext);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.now-detail,
+.now-honest {
+  margin-top: var(--space-4);
+  max-width: 34em;
+  font-size: 14px;
+}
+
+.now-honest {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--radius-chip);
+  background: var(--tint);
+  color: var(--deep);
+}
+
+.now-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.now-meta .text-button {
+  min-height: 40px;
+  font-size: 14px;
+}
+
+.now-clock {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+}
+
+.now-clock figcaption {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  max-width: 300px;
+  color: var(--deep);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.clock-key::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+
+.clock-key.is-working::before {
+  background: var(--ink);
+}
+
+.clock-key.is-winding::before {
+  background: var(--accent);
+}
+
+.clock-rest,
+.clock-fallback {
+  flex-basis: 100%;
+}
+
+.clock-fallback {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+/* 作息圆环 */
+.schedule-clock {
+  display: block;
+  width: min(260px, 100%);
+  height: auto;
+  overflow: visible;
+}
+
+.clock-face {
+  fill: color-mix(in srgb, var(--paper) 68%, var(--sheet));
+  stroke: color-mix(in srgb, var(--ink) 12%, transparent);
+  stroke-width: 1;
+}
+
+.clock-tick {
+  stroke: var(--soft);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0.42;
+}
+
+.clock-tick.is-major {
+  stroke: var(--ink);
+  stroke-width: 1.8;
+  opacity: 0.72;
+}
+
+.clock-dial {
+  fill: none;
+  stroke: color-mix(in srgb, var(--ink) 11%, transparent);
+  stroke-width: 14;
+}
+
+.schedule-clock.is-empty .clock-dial {
+  stroke: var(--rule);
+  stroke-width: 2;
+  stroke-dasharray: 2 6;
+}
+
+.clock-arc {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+}
+
+.clock-arc.is-working {
+  stroke: var(--ink);
+}
+
+.clock-arc.is-winding_down {
+  stroke: var(--accent);
+}
+
+.clock-hand {
+  transform-origin: 130px 130px;
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.clock-hand path {
+  fill: var(--atext);
+  stroke: none;
+}
+
+.clock-hand-tip {
+  fill: var(--accent);
+}
+
+.clock-pin {
+  fill: var(--atext);
+}
+
+.clock-pin-dot {
+  fill: var(--sheet);
+}
+
+.clock-center {
+  fill: var(--atext);
+  font-family: var(--font-hand);
+  font-size: 24px;
+  text-anchor: middle;
+}
+
+.clock-label {
+  fill: var(--soft);
+  font-family: var(--font-num);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* 留言页只保留一行状态。 */
+.now.is-compact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-3) 0;
+  font-size: 14px;
+}
+
+.now.is-compact p[role='status'] {
+  flex: 1 1 16em;
+  color: var(--deep);
+}
+
+.now.is-compact .text-button {
+  min-height: 40px;
+  font-size: 14px;
+}
+
+.now.is-compact .feedback {
+  flex-basis: 100%;
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  .now {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .now-clock {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .now {
+    padding-block: var(--space-8);
+  }
+
+  .now-line {
+    font-size: 17px;
+  }
+
+  /* 圆环缩小，图例放到右侧，整块只占一屏的四分之一左右。 */
+  .now {
+    gap: var(--space-6);
+  }
+
+  .now-clock {
+    grid-template-columns: 148px minmax(0, 1fr);
+    align-items: center;
+    justify-self: stretch;
+    gap: var(--space-4);
+  }
+
+  .now-clock figcaption {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .schedule-clock {
+    width: 148px;
+  }
+
+  /* 圆环按 viewBox 缩放，字号放大到缩小后仍有约 11px。 */
+  .clock-label {
+    font-size: 20px;
+  }
+
+  .clock-center {
+    font-size: 34px;
+  }
+
+  .ink-stamp.is-lg {
+    font-size: 32px;
+  }
+}

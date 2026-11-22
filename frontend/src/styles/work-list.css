@@ -1,0 +1,221 @@
+.work-reception-note {
+  margin: 0 0 var(--space-4);
+  padding: 10px 2px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  color: var(--deep);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.hooks-heading {
+  margin: 0 0 var(--space-3);
+  color: var(--deep);
+  font-size: 1.05rem;
+}
+
+.hooks-heading:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: var(--radius-chip);
+}
+
+.work-filter-block {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter-chip {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: var(--line-width) solid var(--rule);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--deep);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--duration-press) var(--ease-paper),
+    border-color var(--duration-press) var(--ease-paper),
+    transform var(--duration-press) var(--ease-paper);
+}
+
+.filter-chip:hover {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 5%, #fff);
+}
+
+.filter-chip.is-current {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--accent) 42%, var(--paper));
+}
+
+.filter-chip.is-current:hover {
+  background: var(--deep);
+  border-color: var(--deep);
+}
+
+.filter-chip:focus-visible,
+.work-retry-button:focus-visible,
+.work-more-button:focus-visible,
+.task-tag:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.work-filter-status {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.work-list-alert {
+  margin-bottom: var(--space-4);
+  padding: 12px 14px;
+  border: 1.5px solid color-mix(in srgb, var(--error) 45%, #fff);
+  border-radius: var(--radius-control);
+  background: color-mix(in srgb, var(--error) 6%, #fff);
+  color: var(--error);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  font-size: 0.94rem;
+}
+
+.work-list-alert p {
+  margin: 0;
+}
+
+.work-list-alert.is-older {
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+}
+
+.work-retry-button,
+.work-more-button {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: var(--line-width) solid color-mix(in srgb, var(--ink) 45%, #fff);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--deep);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.work-retry-button:hover:not(:disabled),
+.work-more-button:hover:not([aria-disabled='true']) {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 5%, #fff);
+}
+
+.work-retry-button:disabled,
+.work-more-button[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.work-more-row {
+  margin-top: var(--space-4);
+}
+
+/* 区分「未结束」与「已结束」里不同结论单的左侧边色与字色，不在同组里混成一片。 */
+.task-tag.is-queued {
+  border-left-style: dotted;
+  border-left-color: var(--wood, #b48f5c);
+}
+
+.task-tag.is-running {
+  border-left-color: var(--ink);
+}
+
+.task-tag.is-stopping {
+  border-left-color: var(--stamp);
+}
+
+.task-tag.is-completed {
+  border-left-color: color-mix(in srgb, var(--ink) 52%, var(--paper));
+}
+
+.task-tag.is-failed {
+  border-left-color: var(--error);
+}
+
+.task-tag.is-failed .task-tag-state {
+  color: var(--error);
+}
+
+.task-tag.is-cancelled {
+  border-left-style: dashed;
+  border-left-color: var(--stamp);
+}
+
+.task-tag.is-timed_out {
+  border-left-style: dotted;
+  border-left-color: var(--stamp);
+}
+
+.task-tag.is-deferred {
+  border-left-style: dashed;
+  border-left-color: color-mix(in srgb, var(--ink) 56%, var(--paper));
+}
+
+.task-tag.is-deferred .task-tag-state {
+  color: var(--ink);
+}
+
+.task-tag.is-needs_clarification {
+  border-left-color: var(--stamp);
+}
+
+.task-tag.is-needs_clarification .task-tag-state {
+  color: var(--atext);
+}
+
+.task-tag.is-declined {
+  border-left-style: dotted;
+  border-left-color: color-mix(in srgb, var(--soft) 65%, var(--paper));
+}
+
+.task-tag.is-declined .task-tag-state {
+  color: var(--soft);
+}
+
+@media (max-width: 440px) {
+  .work-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-chip {
+    width: 100%;
+    padding-inline: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter-chip {
+    transition: none;
+  }
+}

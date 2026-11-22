@@ -1,0 +1,394 @@
+/* 公开作品目录与详情页：1px 细线目录、无硬框暖纸单页、700 标题字重与真实成果入口。 */
+.public-works-page {
+  max-width: 740px;
+  margin-inline: auto;
+  min-width: 0;
+  padding-block: var(--space-4) var(--space-12);
+}
+
+.works-back-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.works-back-link,
+.works-back-secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.works-back-secondary {
+  font-weight: 400;
+  color: var(--soft);
+}
+
+.works-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--rule);
+}
+
+.works-header-copy {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.works-page-title {
+  margin: 0;
+  font-size: clamp(26px, 3.8vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.24;
+}
+
+.works-page-title.overprint {
+  text-shadow: 0.04em 0.03em 0 color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.works-page-sub,
+.works-end-note {
+  color: var(--soft);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.works-end-note {
+  margin-top: var(--space-2);
+}
+
+.works-refresh-btn,
+.works-retry-btn,
+.work-file-reload-btn {
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.works-inline-notice {
+  margin-top: var(--space-4);
+  padding-block: var(--space-2);
+  border-block: 1px solid var(--gridline);
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.works-inline-notice.is-warn {
+  border-color: color-mix(in srgb, var(--error) 35%, var(--paper));
+  color: var(--error);
+}
+
+.works-state-box {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-block: var(--space-6);
+  border-block: 1px dashed var(--rule);
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.works-state-box.is-error {
+  border-color: color-mix(in srgb, var(--error) 45%, var(--paper));
+  color: var(--error);
+}
+
+.works-state-title {
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 700;
+  color: var(--deep);
+}
+
+.works-state-box.is-error .works-state-title {
+  color: var(--error);
+}
+
+.works-state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.works-list,
+.work-links-list,
+.work-files-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.works-list-item {
+  display: grid;
+  gap: var(--space-3) var(--space-6);
+  align-items: start;
+  min-width: 0;
+  padding-block: var(--space-6);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+}
+
+.works-list-item.has-cover {
+  grid-template-columns: minmax(0, 1fr) 176px;
+}
+
+.works-item-copy {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.works-item-title {
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  line-height: 1.38;
+  color: var(--deep);
+  overflow-wrap: anywhere;
+}
+
+.works-item-summary {
+  max-width: 42em;
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.works-pager {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.works-pager-error {
+  color: var(--error);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.works-more-btn {
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* 作品详情单页：正文与真实成果并重，细横线清晰分区 */
+.work-detail-sheet {
+  margin-top: var(--space-4);
+  padding: var(--space-8);
+}
+
+.work-detail-header {
+  display: grid;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px dashed var(--rule);
+}
+
+.work-detail-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.work-detail-title {
+  margin: 0;
+  font-size: clamp(22px, 3.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  color: var(--deep);
+  overflow-wrap: anywhere;
+}
+
+.work-detail-body {
+  margin-top: var(--space-6);
+  max-width: 42em;
+  color: var(--deep);
+  font-size: 16px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.work-outcomes {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px dashed var(--rule);
+}
+
+.work-outcomes-heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.work-sub-heading {
+  margin: 0 0 var(--space-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--soft);
+}
+
+.work-link-row,
+.work-file-row {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, var(--paper));
+}
+
+.work-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-4);
+}
+
+.work-external-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.work-link-meta,
+.work-file-meta {
+  color: var(--soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.work-file-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-4);
+}
+
+.work-file-info {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  flex: 1 1 200px;
+}
+
+.work-file-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--deep);
+  overflow-wrap: anywhere;
+}
+
+.work-file-download-btn {
+  min-height: 40px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.work-file-status {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.work-file-error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  color: var(--error);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.work-detail-credits {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, var(--paper));
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.work-detail-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-4);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .works-list-item.has-cover {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .public-works-page {
+    padding-block: var(--space-3) var(--space-8);
+  }
+  .works-list-item {
+    padding-block: var(--space-4);
+  }
+  .work-detail-sheet {
+    padding: var(--space-4);
+  }
+  .work-detail-body {
+    margin-top: var(--space-4);
+    line-height: 1.85;
+  }
+  .works-more-btn,
+  .work-file-download-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .works-more-btn,
+  .work-file-download-btn {
+    transition: none;
+  }
+  .works-more-btn:hover,
+  .works-more-btn:active,
+  .work-file-download-btn:hover,
+  .work-file-download-btn:active {
+    transform: none;
+  }
+}

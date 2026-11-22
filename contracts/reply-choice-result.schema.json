@@ -1,0 +1,244 @@
+{
+  "$defs": {
+    "DeferChoice": {
+      "additionalProperties": false,
+      "properties": {
+        "message_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Message Ids",
+          "type": "array"
+        },
+        "kind": {
+          "const": "defer",
+          "title": "Kind",
+          "type": "string"
+        },
+        "revisit_at": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Revisit At",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message_ids",
+        "kind",
+        "revisit_at"
+      ],
+      "title": "DeferChoice",
+      "type": "object"
+    },
+    "NoReplyChoice": {
+      "additionalProperties": false,
+      "properties": {
+        "message_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Message Ids",
+          "type": "array"
+        },
+        "kind": {
+          "const": "no_reply",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message_ids",
+        "kind"
+      ],
+      "title": "NoReplyChoice",
+      "type": "object"
+    },
+    "ReceptionRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "enum": [
+            "reply",
+            "work",
+            "all"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "available",
+            "focusing",
+            "resting",
+            "later"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "resume_on": {
+          "anyOf": [
+            {
+              "enum": [
+                "at_time",
+                "new_input",
+                "explicit"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Resume On"
+        },
+        "until": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Until"
+        }
+      },
+      "required": [
+        "scope",
+        "mode",
+        "resume_on",
+        "until"
+      ],
+      "title": "ReceptionRequest",
+      "type": "object"
+    },
+    "ReplyChoice": {
+      "additionalProperties": false,
+      "properties": {
+        "message_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Message Ids",
+          "type": "array"
+        },
+        "kind": {
+          "const": "reply",
+          "title": "Kind",
+          "type": "string"
+        },
+        "body": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Body",
+          "type": "string"
+        }
+      },
+      "required": [
+        "message_ids",
+        "kind",
+        "body"
+      ],
+      "title": "ReplyChoice",
+      "type": "object"
+    },
+    "RevisitRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "message_ids": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "maxItems": 10,
+          "minItems": 1,
+          "title": "Message Ids",
+          "type": "array"
+        },
+        "revisit_at": {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "title": "Revisit At",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message_ids",
+        "revisit_at"
+      ],
+      "title": "RevisitRequest",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 2,
+      "title": "Version",
+      "type": "integer"
+    },
+    "decisions": {
+      "items": {
+        "discriminator": {
+          "mapping": {
+            "defer": "#/$defs/DeferChoice",
+            "no_reply": "#/$defs/NoReplyChoice",
+            "reply": "#/$defs/ReplyChoice"
+          },
+          "propertyName": "kind"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/ReplyChoice"
+          },
+          {
+            "$ref": "#/$defs/NoReplyChoice"
+          },
+          {
+            "$ref": "#/$defs/DeferChoice"
+          }
+        ]
+      },
+      "maxItems": 10,
+      "title": "Decisions",
+      "type": "array"
+    },
+    "revisits": {
+      "items": {
+        "$ref": "#/$defs/RevisitRequest"
+      },
+      "maxItems": 10,
+      "title": "Revisits",
+      "type": "array"
+    },
+    "reception": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReceptionRequest"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "decisions",
+    "revisits",
+    "reception"
+  ],
+  "title": "ReplyChoiceResult",
+  "type": "object"
+}

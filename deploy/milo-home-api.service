@@ -1,0 +1,41 @@
+# Render with scripts/render-deployment.py; do not install this template directly.
+[Unit]
+Description=Milo Home private message API
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=@@ACCOUNT@@
+Group=@@ACCOUNT@@
+WorkingDirectory=@@WORKING_DIRECTORY@@
+Environment=@@CONFIG_ENV@@
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+ExecStart=@@PYTHON@@ -m uvicorn milo_home.app:create_app --factory --host 127.0.0.1 --port @@PORT@@ --proxy-headers --forwarded-allow-ips=127.0.0.1 --no-access-log
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=30
+ReadWritePaths=@@WRITABLE@@
+UMask=0077
+CPUQuota=50%
+CPUQuotaPeriodSec=10ms
+AllowedCPUs=@@CPUS@@
+CPUAffinity=@@AFFINITY@@
+MemoryMax=512M
+TasksMax=64
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+IPAddressDeny=any
+IPAddressAllow=localhost
+
+[Install]
+WantedBy=multi-user.target

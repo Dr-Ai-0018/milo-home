@@ -1,0 +1,121 @@
+{
+  "$defs": {
+    "ReceptionRequest": {
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "enum": [
+            "reply",
+            "work",
+            "all"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "available",
+            "focusing",
+            "resting",
+            "later"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "resume_on": {
+          "anyOf": [
+            {
+              "enum": [
+                "at_time",
+                "new_input",
+                "explicit"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Resume On"
+        },
+        "until": {
+          "anyOf": [
+            {
+              "maximum": 9223372036854775807,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Until"
+        }
+      },
+      "required": [
+        "scope",
+        "mode",
+        "resume_on",
+        "until"
+      ],
+      "title": "ReceptionRequest",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "decision": {
+      "enum": [
+        "accepted",
+        "deferred",
+        "declined",
+        "needs_clarification"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "receipt": {
+      "maxLength": 8000,
+      "minLength": 1,
+      "title": "Receipt",
+      "type": "string"
+    },
+    "revisit_at": {
+      "anyOf": [
+        {
+          "maximum": 9223372036854775807,
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Revisit At"
+    },
+    "reception": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReceptionRequest"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "decision",
+    "receipt",
+    "revisit_at",
+    "reception"
+  ],
+  "title": "WorkDecisionResult",
+  "type": "object"
+}

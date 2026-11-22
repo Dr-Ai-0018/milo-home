@@ -1,0 +1,17 @@
+{
+  "title": "一件合成作品草稿",
+  "summary": "本机输入示例，不是正式发布内容。",
+  "body": "写明做了什么、适合谁，再明确选定访问链接或已导入的下载资产。",
+  "category": null,
+  "version_label": "合成版本",
+  "content_date": "2026-11-22",
+  "credits": null,
+  "links": [
+    {
+      "label": "访问示例网站",
+      "url": "https://example.org/"
+    }
+  ],
+  "files": [],
+  "cover": null
+}

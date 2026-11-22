@@ -1,0 +1,11 @@
+[Unit]
+Description=Observe Milo Home materials and maintain at most two settled streams
+
+[Timer]
+OnBootSec=5min
+OnUnitInactiveSec=30min
+AccuracySec=30s
+Unit=milo-home-maintenance.service
+
+[Install]
+WantedBy=timers.target

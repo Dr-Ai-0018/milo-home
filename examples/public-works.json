@@ -1,0 +1,629 @@
+{
+  "synthetic": true,
+  "description": "作品S1可用接口的合成契约样例，仅供隔离开发；不是生产作品、真实发布记录或同代恢复证据。",
+  "binary_fixtures": [
+    {
+      "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000001/preview",
+      "status": 200,
+      "content_type": "image/png",
+      "size_bytes": 68,
+      "sha256": "ec38a3b580791e107b8dd95fe5571dd151ca42631c922926c78cc85105c252cb",
+      "body_base64": "iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAAC0lEQVR4nGNgAAMAAAcAAbKGrPQAAAAASUVORK5CYII="
+    },
+    {
+      "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000002/download",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "size_bytes": 19,
+      "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+      "body_base64": "c3ludGhldGljLWRvd25sb2FkCg=="
+    },
+    {
+      "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000003/download",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "size_bytes": 19,
+      "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+      "body_base64": "c3ludGhldGljLWRvd25sb2FkCg=="
+    },
+    {
+      "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000004/download",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "size_bytes": 19,
+      "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+      "body_base64": "c3ludGhldGljLWRvd25sb2FkCg=="
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "home_latest_two",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=2"
+      },
+      "status": 200,
+      "response": {
+        "works": [
+          {
+            "id": "20000000-0000-4000-8000-000000000003",
+            "sequence": 3,
+            "revision": 1,
+            "title": "合成作品 3",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338003,
+            "updated_at": 1795338003,
+            "cover": {
+              "asset_id": "21000000-0000-4000-8000-000000000001",
+              "url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000001/preview",
+              "alt": "合成封面：两格横向小图",
+              "width": 2,
+              "height": 1
+            }
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000002",
+            "sequence": 2,
+            "revision": 1,
+            "title": "合成作品 2",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": null,
+            "version_label": null,
+            "content_date": "2026-11-22",
+            "published_at": 1795338002,
+            "updated_at": 1795338002,
+            "cover": null
+          }
+        ],
+        "next_before": 2
+      },
+      "expectation": "首页最多两件一主一辅；缺封面与版本null不留空壳。"
+    },
+    {
+      "name": "catalog_first_page",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=10"
+      },
+      "status": 200,
+      "response": {
+        "works": [
+          {
+            "id": "20000000-0000-4000-8000-000000000012",
+            "sequence": 12,
+            "revision": 1,
+            "title": "合成作品 12",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338012,
+            "updated_at": 1795338012,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000011",
+            "sequence": 11,
+            "revision": 1,
+            "title": "合成作品 11",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338011,
+            "updated_at": 1795338011,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000010",
+            "sequence": 10,
+            "revision": 1,
+            "title": "合成作品 10",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338010,
+            "updated_at": 1795338010,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000009",
+            "sequence": 9,
+            "revision": 1,
+            "title": "合成作品 9",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338009,
+            "updated_at": 1795338009,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000008",
+            "sequence": 8,
+            "revision": 1,
+            "title": "合成作品 8",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338008,
+            "updated_at": 1795338008,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000007",
+            "sequence": 7,
+            "revision": 1,
+            "title": "合成作品 7",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338007,
+            "updated_at": 1795338007,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000006",
+            "sequence": 6,
+            "revision": 1,
+            "title": "合成作品 6",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338006,
+            "updated_at": 1795338006,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000005",
+            "sequence": 5,
+            "revision": 1,
+            "title": "合成作品 5",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338005,
+            "updated_at": 1795338005,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000004",
+            "sequence": 4,
+            "revision": 1,
+            "title": "合成作品 4",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338004,
+            "updated_at": 1795338004,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000003",
+            "sequence": 3,
+            "revision": 1,
+            "title": "合成作品 3",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2026-11-22",
+            "published_at": 1795338003,
+            "updated_at": 1795338003,
+            "cover": null
+          }
+        ],
+        "next_before": 3
+      },
+      "expectation": "十条首次发布倒序，有更早才显示前翻。"
+    },
+    {
+      "name": "catalog_last_page",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=10&before=3"
+      },
+      "status": 200,
+      "response": {
+        "works": [
+          {
+            "id": "20000000-0000-4000-8000-000000000002",
+            "sequence": 2,
+            "revision": 1,
+            "title": "合成作品 2",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": null,
+            "version_label": null,
+            "content_date": "2026-11-22",
+            "published_at": 1795338002,
+            "updated_at": 1795338002,
+            "cover": null
+          },
+          {
+            "id": "20000000-0000-4000-8000-000000000001",
+            "sequence": 1,
+            "revision": 1,
+            "title": "合成作品 1",
+            "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+            "category": "合成样例",
+            "version_label": "2026 冬",
+            "content_date": "2025-12-31",
+            "published_at": 1795338001,
+            "updated_at": 1795338001,
+            "cover": null
+          }
+        ],
+        "next_before": null
+      },
+      "expectation": "末页停止前翻，跨年日期带明确年份。"
+    },
+    {
+      "name": "empty_catalog",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=10"
+      },
+      "status": 200,
+      "response": {
+        "works": [],
+        "next_before": null
+      },
+      "expectation": "真正空目录正常说明，不放假作品或无效入口。"
+    },
+    {
+      "name": "link_only_no_cover",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000002"
+      },
+      "status": 200,
+      "response": {
+        "id": "20000000-0000-4000-8000-000000000002",
+        "sequence": 2,
+        "revision": 1,
+        "title": "合成作品 2",
+        "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+        "category": null,
+        "version_label": null,
+        "content_date": "2026-11-22",
+        "published_at": 1795338002,
+        "updated_at": 1795338002,
+        "cover": null,
+        "body": "这是合成作品正文。\n\n介绍先讲做了什么，再给真实访问或下载入口；这段不是实际作品经历。",
+        "credits": null,
+        "links": [
+          {
+            "label": "访问示例网站",
+            "url": "https://example.org/"
+          }
+        ],
+        "files": []
+      },
+      "expectation": "只有真实链接也成立，无封面、无下载、不凑空按钮。"
+    },
+    {
+      "name": "cover_and_download",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003"
+      },
+      "status": 200,
+      "response": {
+        "id": "20000000-0000-4000-8000-000000000003",
+        "sequence": 3,
+        "revision": 1,
+        "title": "合成作品 3",
+        "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+        "category": "合成样例",
+        "version_label": "2026 冬",
+        "content_date": "2026-11-22",
+        "published_at": 1795338003,
+        "updated_at": 1795338003,
+        "cover": {
+          "asset_id": "21000000-0000-4000-8000-000000000001",
+          "url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000001/preview",
+          "alt": "合成封面：两格横向小图",
+          "width": 2,
+          "height": 1
+        },
+        "body": "这是合成作品正文。\n\n介绍先讲做了什么，再给真实访问或下载入口；这段不是实际作品经历。",
+        "credits": "合成署名，仅供排版核对。",
+        "links": [
+          {
+            "label": "访问示例网站",
+            "url": "https://example.org/"
+          }
+        ],
+        "files": [
+          {
+            "id": "21000000-0000-4000-8000-000000000002",
+            "filename": "合成说明.dat",
+            "size_bytes": 19,
+            "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+            "download_url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000002/download"
+          }
+        ]
+      },
+      "expectation": "固定尺寸和alt保位；PNG与任意文件独立读取，正文不复读summary。"
+    },
+    {
+      "name": "multiple_files",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003"
+      },
+      "status": 200,
+      "response": {
+        "id": "20000000-0000-4000-8000-000000000003",
+        "sequence": 3,
+        "revision": 1,
+        "title": "合成作品 3",
+        "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+        "category": "合成样例",
+        "version_label": "2026 冬",
+        "content_date": "2026-11-22",
+        "published_at": 1795338003,
+        "updated_at": 1795338003,
+        "cover": {
+          "asset_id": "21000000-0000-4000-8000-000000000001",
+          "url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000001/preview",
+          "alt": "合成封面：两格横向小图",
+          "width": 2,
+          "height": 1
+        },
+        "body": "这是合成作品正文。\n\n介绍先讲做了什么，再给真实访问或下载入口；这段不是实际作品经历。",
+        "credits": "合成署名，仅供排版核对。",
+        "links": [
+          {
+            "label": "访问示例网站",
+            "url": "https://example.org/"
+          }
+        ],
+        "files": [
+          {
+            "id": "21000000-0000-4000-8000-000000000002",
+            "filename": "合成说明.dat",
+            "size_bytes": 19,
+            "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+            "download_url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000002/download"
+          },
+          {
+            "id": "21000000-0000-4000-8000-000000000003",
+            "filename": "合成页面.html",
+            "size_bytes": 19,
+            "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+            "download_url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000003/download"
+          },
+          {
+            "id": "21000000-0000-4000-8000-000000000004",
+            "filename": "合成归档.zip",
+            "size_bytes": 19,
+            "sha256": "133313c7e3e1a05f31be09574acf0285d4cfd72266321bebbd29f5a423f4dc33",
+            "download_url": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000004/download"
+          }
+        ]
+      },
+      "expectation": "逐份明确下载，不内联HTML，不提供不存在的动态打包。"
+    },
+    {
+      "name": "long_plain_text",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000002"
+      },
+      "status": 200,
+      "response": {
+        "id": "20000000-0000-4000-8000-000000000002",
+        "sequence": 2,
+        "revision": 1,
+        "title": "合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题",
+        "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+        "category": null,
+        "version_label": "这一版只作合成样例",
+        "content_date": "2026-11-22",
+        "published_at": 1795338002,
+        "updated_at": 1795338002,
+        "cover": null,
+        "body": "合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n合成正文用于长文阅读、换行与返回位置核对。\n\n",
+        "credits": "合成署名，仅供排版核对。",
+        "links": [
+          {
+            "label": "访问示例网站",
+            "url": "https://example.org/"
+          }
+        ],
+        "files": []
+      },
+      "expectation": "长标题、长正文和窄屏仍可读，返回目录保留已读页与位置。"
+    },
+    {
+      "name": "html_is_plain_text",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000002"
+      },
+      "status": 200,
+      "response": {
+        "id": "20000000-0000-4000-8000-000000000002",
+        "sequence": 2,
+        "revision": 1,
+        "title": "<script>合成标题</script>",
+        "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+        "category": null,
+        "version_label": null,
+        "content_date": "2026-11-22",
+        "published_at": 1795338002,
+        "updated_at": 1795338002,
+        "cover": null,
+        "body": "<img src=x onerror=alert(1)>\n<script>仅为纯文本，不得执行</script>",
+        "credits": "合成署名，仅供排版核对。",
+        "links": [
+          {
+            "label": "<b>站外示例</b>",
+            "url": "https://example.org/?from=synthetic#work"
+          }
+        ],
+        "files": []
+      },
+      "expectation": "正文、标题及链接label均纯文本，站外链接有安全rel。"
+    },
+    {
+      "name": "refresh_replaces_snapshot",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003"
+      },
+      "status": 200,
+      "response": {
+        "id": "20000000-0000-4000-8000-000000000003",
+        "sequence": 3,
+        "revision": 2,
+        "title": "合成作品 3",
+        "summary": "明确标记的合成作品，只供隔离页面核对，不代表真实成果。",
+        "category": "合成样例",
+        "version_label": "合成修订二",
+        "content_date": "2026-11-22",
+        "published_at": 1795338003,
+        "updated_at": 1795338500,
+        "cover": null,
+        "body": "修订后只保留站外访问。",
+        "credits": "合成署名，仅供排版核对。",
+        "links": [
+          {
+            "label": "访问示例网站",
+            "url": "https://example.org/"
+          }
+        ],
+        "files": []
+      },
+      "expectation": "成功刷新按当前快照替换，移除旧封面和文件。"
+    },
+    {
+      "name": "older_backend_list_404",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=2"
+      },
+      "status": 404,
+      "response": {
+        "error": {
+          "code": "not_found",
+          "message": "接口当前不可读取。"
+        }
+      },
+      "expectation": "说明作品还没接到这里，隐藏无效详情入口，不捏造随站作品。"
+    },
+    {
+      "name": "detail_withdrawn_404",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003"
+      },
+      "status": 404,
+      "response": {
+        "error": {
+          "code": "work_not_found",
+          "message": "这件作品当前不可读取。"
+        }
+      },
+      "expectation": "当前作品不可读，移除内存条目，不找回旧正文。"
+    },
+    {
+      "name": "asset_selection_changed_404",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000002/download"
+      },
+      "status": 404,
+      "response": {
+        "error": {
+          "code": "work_asset_not_found",
+          "message": "这份文件当前不在作品的公开版本中。"
+        }
+      },
+      "expectation": "仅文件入口失效，保留作品说明并提供重读作品，不能据此判作品撤下。"
+    },
+    {
+      "name": "list_temporarily_busy",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=2"
+      },
+      "status": 503,
+      "response": {
+        "error": {
+          "code": "database_busy",
+          "message": "收件服务繁忙，请稍后重试。"
+        }
+      },
+      "expectation": "保留上次列表及位置，明确未更新并可就地重读，零轮询。"
+    },
+    {
+      "name": "detail_temporarily_busy",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003"
+      },
+      "status": 503,
+      "response": {
+        "error": {
+          "code": "database_busy",
+          "message": "收件服务繁忙，请稍后重试。"
+        }
+      },
+      "expectation": "保留正文与已有入口，重读期间保焦；不当成撤下。"
+    },
+    {
+      "name": "cover_unavailable",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000001/preview"
+      },
+      "status": 503,
+      "response": {
+        "error": {
+          "code": "work_asset_unavailable",
+          "message": "封面暂时无法读取。"
+        }
+      },
+      "expectation": "保留封面占位和alt，作品正文、访问及下载不受遮挡。"
+    },
+    {
+      "name": "download_unavailable",
+      "request": {
+        "method": "GET",
+        "path": "/api/works/20000000-0000-4000-8000-000000000003/assets/21000000-0000-4000-8000-000000000002/download"
+      },
+      "status": 503,
+      "response": {
+        "error": {
+          "code": "work_asset_unavailable",
+          "message": "这份公开文件暂时无法读取，请稍后重试。"
+        }
+      },
+      "expectation": "局部下载失败可重试，不清空作品或伪装已经下载。"
+    },
+    {
+      "name": "no_more_visible_items",
+      "request": {
+        "method": "GET",
+        "path": "/api/works?limit=10&before=1"
+      },
+      "status": 200,
+      "response": {
+        "works": [],
+        "next_before": null
+      },
+      "expectation": "途中撤下导致空末页正常收口，按钮消失时有条件移交焦点。"
+    }
+  ]
+}

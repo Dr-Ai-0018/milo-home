@@ -1,0 +1,444 @@
+{
+  "synthetic": true,
+  "description": "合成状态样例；不是真实来信、服务状态或上线证据。时间可整体平移。",
+  "observed_at": 1795089600,
+  "cases": [
+    {
+      "name": "nothing_pending",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 0,
+          "available_count": 0,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": null,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "nothing_pending"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "saved_automation_unknown",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "automatic_unknown"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "resting",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "resting",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "resting"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "paused",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "paused",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "paused"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "waiting_for_work",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "execution_busy"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "reading",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "running",
+        "heartbeat_at": 1795089600,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 0,
+          "reserved_count": 2,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "processing"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "reconciliation",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "unknown",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 0,
+          "reserved_count": 2,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "needs_reconciliation"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "all_blocked",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 0,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 2,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "blocked"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "partial_blocked",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 3,
+          "available_count": 1,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 2,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "automatic_unknown"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "retry_wait",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089615,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 0,
+          "reserved_count": 0,
+          "retry_wait_count": 2,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": 1795089615,
+          "clock_invalid": false,
+          "reason": "retry_wait"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_missing",
+          "observed_at": null,
+          "valid_until": null
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    },
+    {
+      "name": "future_a2_service_scheduled",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "automatic_unknown"
+        },
+        "reply_service": {
+          "state": "scheduled",
+          "reason": "check_current",
+          "observed_at": 1795089599,
+          "valid_until": 1795089644
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      },
+      "requires_a2_service_evidence": true
+    },
+    {
+      "name": "future_a2_service_disabled",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "automatic_unknown"
+        },
+        "reply_service": {
+          "state": "disabled",
+          "reason": "explicitly_disabled",
+          "observed_at": 1795089599,
+          "valid_until": 1795089644
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      },
+      "requires_a2_service_evidence": true
+    },
+    {
+      "name": "future_a2_service_faulted",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "automatic_unknown"
+        },
+        "reply_service": {
+          "state": "faulted",
+          "reason": "execution_fault",
+          "observed_at": 1795089599,
+          "valid_until": 1795089644
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      },
+      "requires_a2_service_evidence": true
+    },
+    {
+      "name": "future_a2_service_unknown",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "reply_queue": {
+          "pending_count": 2,
+          "available_count": 2,
+          "reserved_count": 0,
+          "retry_wait_count": 0,
+          "blocked_count": 0,
+          "oldest_pending_at": 1795089480,
+          "retry_after": null,
+          "clock_invalid": false,
+          "reason": "automatic_unknown"
+        },
+        "reply_service": {
+          "state": "unknown",
+          "reason": "observation_expired",
+          "observed_at": 1795089540,
+          "valid_until": 1795089585
+        },
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      },
+      "requires_a2_service_evidence": true
+    },
+    {
+      "name": "legacy_backend_missing_fields",
+      "activity": {
+        "observed_at": 1795089600,
+        "valid_until": 1795089645,
+        "response_phase": "working",
+        "processing": "idle",
+        "heartbeat_at": null,
+        "latest_reply_at": 1795089000,
+        "automatic_processing": "unknown",
+        "automatic_reason": "management_not_configured"
+      }
+    }
+  ]
+}

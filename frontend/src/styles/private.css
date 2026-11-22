@@ -1,0 +1,128 @@
+/* 书信与聊天共用：登录纸片、账号条、对话头和连接问题。 */
+.session-loading {
+  color: var(--soft);
+}
+
+/* 登录纸片 */
+.auth-space {
+  max-width: 520px;
+  padding: var(--space-8);
+  border: var(--line-width) solid var(--ink);
+}
+
+.auth-space.is-shake-a {
+  animation: auth-shake-a 400ms ease;
+}
+
+.auth-space.is-shake-b {
+  animation: auth-shake-b 400ms ease;
+}
+
+@keyframes auth-shake-a {
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes auth-shake-b {
+  20% {
+    transform: translateX(-6px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+.auth-title {
+  margin-bottom: var(--space-2);
+}
+
+.auth-intro {
+  margin-bottom: var(--space-6);
+  font-size: 14px;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.auth-space input + label {
+  margin-top: var(--space-6);
+}
+
+.field-help {
+  margin-block: var(--space-2) var(--space-6);
+}
+
+.auth-footnote {
+  margin-top: var(--space-2);
+}
+
+/* 对话头 */
+.conversation-header {
+  margin-bottom: var(--space-6);
+}
+
+.conversation-header h1,
+.conversation-header h2 {
+  font-size: 28px;
+  overflow-wrap: anywhere;
+}
+
+.pending-line {
+  margin-top: var(--space-1);
+  color: var(--soft);
+  font-size: 14px;
+}
+
+/* 账号条：登录后在私密页面顶端右侧，只放两个文字按钮；称呼留给各页标题和署名。 */
+.account-bar {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.account-bar .text-button {
+  font-size: 14px;
+}
+
+/* 放在内容下面时和读信记录一起当脚注。 */
+.account-bar.is-foot {
+  justify-content: flex-start;
+  margin: var(--space-4) 0 0;
+}
+
+.connection-problem {
+  margin-top: var(--space-4);
+}
+
+/* 私密区整体读不到时，提示放在最上面，不藏在页面底部。 */
+.private-gate > .connection-problem {
+  margin: 0 0 var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .auth-space {
+    padding: var(--space-6) var(--space-4);
+  }
+}

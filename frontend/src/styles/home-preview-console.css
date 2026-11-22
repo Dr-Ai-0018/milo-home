@@ -1,0 +1,142 @@
+/* 首页双版设计预览控制台与规则说明样式。 */
+.preview-console {
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) 0 var(--space-3);
+  border-bottom: 1px dashed var(--rule);
+}
+
+.preview-console-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.preview-console-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+  font-size: 14px;
+}
+
+.preview-badge {
+  padding: 2px 8px;
+  border-radius: var(--radius-chip);
+  background: var(--tint);
+  color: var(--deep);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.preview-summary {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.preview-console-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.preview-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.preview-chip {
+  min-height: 40px;
+  padding: 6px 12px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.preview-chip.is-sm {
+  min-height: 36px;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.preview-chip[aria-pressed='true'] {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+}
+
+.preview-chip.is-replay {
+  border-color: var(--atext);
+  color: var(--atext);
+}
+
+.preview-collapse-btn,
+.preview-cross-link {
+  min-height: 36px;
+  font-size: 13px;
+}
+
+.preview-console-body {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--gridline);
+}
+
+.preview-control-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.preview-control-label {
+  min-width: 5em;
+  color: var(--soft);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.preview-variant-note {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.preview-rules-drawer {
+  font-size: 13px;
+  color: var(--deep);
+}
+
+.preview-rules-drawer summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.preview-rules-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-4);
+  margin: var(--space-3) 0 0;
+}
+
+.preview-rule-item dt {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.preview-rule-item dd {
+  margin: 2px 0 0;
+  color: var(--soft);
+  line-height: 1.55;
+}
+
+@media (max-width: 800px) {
+  .preview-rules-list {
+    grid-template-columns: 1fr;
+  }
+}

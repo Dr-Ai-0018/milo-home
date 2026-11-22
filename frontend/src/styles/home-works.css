@@ -1,0 +1,279 @@
+/* 首页作品一角与共享元信息、标题链接、固定比例 PNG 封面样式（暖纸无硬框，不做卡片墙）。 */
+.home-works-section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.home-works-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.home-works-heading-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  min-width: 0;
+}
+
+.home-works-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.home-works-all-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home-works-reload,
+.home-works-retry {
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-works-sub {
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.home-works-notice {
+  padding-block: var(--space-2);
+  border-top: 1px solid var(--gridline);
+  border-bottom: 1px solid var(--gridline);
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.home-works-notice.is-warn {
+  border-color: color-mix(in srgb, var(--error) 35%, var(--paper));
+  color: var(--error);
+}
+
+.home-works-state {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+  border-top: 1px dashed var(--rule);
+  border-bottom: 1px dashed var(--rule);
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.home-works-state.is-error {
+  border-color: color-mix(in srgb, var(--error) 45%, var(--paper));
+  color: var(--error);
+}
+
+.home-works-stack {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.home-lead-work {
+  display: grid;
+  gap: var(--space-4) var(--space-6);
+  align-items: center;
+}
+
+.home-lead-work.has-cover {
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+}
+
+.home-lead-work-body {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.work-meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+.work-meta-kind {
+  color: var(--atext);
+  font-weight: 700;
+}
+
+.work-meta-version {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.home-lead-work-title,
+.home-secondary-title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--deep);
+  overflow-wrap: anywhere;
+}
+
+.home-lead-work-title {
+  font-size: clamp(20px, 2.3vw, 25px);
+  line-height: 1.32;
+}
+
+.work-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-title-link:hover {
+  color: var(--atext);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+}
+
+.home-lead-work-summary,
+.home-secondary-summary {
+  max-width: 42em;
+  font-size: 15px;
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.home-lead-work-summary {
+  color: var(--deep);
+}
+
+.home-secondary-summary {
+  color: var(--soft);
+}
+
+.home-work-readmore {
+  margin-top: var(--space-1);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-secondary-work {
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--rule);
+}
+
+.home-secondary-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home-secondary-row {
+  display: grid;
+  gap: var(--space-3) var(--space-6);
+  align-items: start;
+}
+
+.home-secondary-row.has-cover {
+  grid-template-columns: minmax(0, 1fr) 168px;
+}
+
+.home-secondary-copy {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.home-secondary-title {
+  font-size: 18px;
+  line-height: 1.38;
+}
+
+/* 封面图：固定比例防跳动，失败退回细虚线占位并保留 alt */
+.work-cover-figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.work-cover-figure.is-detail {
+  margin-top: var(--space-6);
+}
+
+.work-cover-frame {
+  position: relative;
+  width: 100%;
+  max-height: 440px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, var(--paper));
+  border-radius: var(--radius-chip);
+  background: color-mix(in srgb, var(--paper) 68%, var(--sheet));
+}
+
+.work-cover-figure.is-home .work-cover-frame {
+  max-height: 240px;
+}
+
+.work-cover-figure.is-catalog .work-cover-frame {
+  max-height: 132px;
+}
+
+.work-cover-frame.is-failed {
+  border-style: dashed;
+  border-color: var(--rule);
+  min-height: 96px;
+}
+
+.work-cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-cover-fallback {
+  display: grid;
+  align-content: center;
+  gap: var(--space-1);
+  width: 100%;
+  height: 100%;
+  padding: var(--space-3);
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.work-cover-fallback-state {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.work-cover-fallback-alt {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  .home-lead-work.has-cover,
+  .home-secondary-row.has-cover {
+    grid-template-columns: 1fr;
+  }
+
+  .work-cover-figure.is-catalog .work-cover-frame {
+    max-height: 190px;
+  }
+}

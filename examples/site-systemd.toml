@@ -1,0 +1,38 @@
+# Copy to your own protected file and change EVERY deployment-specific value.
+# Used by scripts/render-deployment.py; not valid for the local development tree.
+[app]
+database = "/var/lib/milo-home/home.sqlite3"
+origins = ["https://home.example.test"]
+secure_cookie = true
+
+[paths]
+code_root = "/opt/milo-home"
+static_root = "/srv/www/milo-home"
+protected_roots = ["/srv/milo-personal"]
+
+[execution]
+database_user = "milo-service"
+# Advanced execution requires explicit registration before any timer is enabled.
+# run_directory = "/var/lib/milo-home-execution/main"
+# reply_directory = "/var/lib/milo-home-execution/replies"
+# workspace = "/srv/milo-workspace"
+# profile = "/etc/milo-home/provider.toml"
+# credential_file = "/etc/milo-home/provider.key"
+# cli = "/opt/codex/bin/codex"
+# tool_host = "/opt/codex/bin/codex-code-mode-host"
+
+# Stores require both fields; keep separate from code/static/personal roots.
+# [work_attachments]
+# root = "/var/lib/milo-home/private-files"
+# max_bytes = 536870912
+# [public_assets]
+# root = "/var/lib/milo-home/public-files"
+# max_bytes = 268435456
+
+# Summary directory is root-owned and outside API-writable roots.
+# [maintenance]
+# file = "/var/lib/milo-home-observation/summary.json"
+# owner = "00000000-0000-4000-8000-000000000001"
+# backup_directory = "/var/backups/milo-home"
+# daily_unit = "milo-backup.service"
+# success_file = "/var/lib/milo-backup/last-success"

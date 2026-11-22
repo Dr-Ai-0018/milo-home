@@ -1,0 +1,364 @@
+/* 聊天：传纸条。暖纸页头、就地状态层级与输入区。 */
+.chat-heading,
+.chat-workspace {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* 页头：沿用无硬框暖纸卡片、700 标题字重与轻柔虚线分界，紧凑让位给纸条本身。 */
+.chat-heading {
+  margin-top: var(--space-4);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-paper);
+  background: var(--sheet);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    5px 6px 0 var(--shade);
+}
+
+.chat-heading.is-known {
+  padding: var(--space-4) var(--space-6);
+}
+
+.chat-heading h1 {
+  margin: 0;
+  font-size: clamp(24px, 3.6vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.chat-heading .overprint {
+  text-shadow: 0.04em 0.03em 0 color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.chat-heading .knock-row {
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: 0;
+}
+
+.chat-heading .knock-button {
+  min-height: 38px;
+  padding: 5px 12px;
+  border: 1px solid color-mix(in srgb, var(--ink) 26%, var(--paper));
+  box-shadow: 2px 3px 0 color-mix(in srgb, var(--accent) 55%, var(--paper));
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chat-heading .knock-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 4px 0 color-mix(in srgb, var(--accent) 68%, var(--paper));
+}
+
+.chat-heading .knock-button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 color-mix(in srgb, var(--accent) 55%, var(--paper));
+}
+
+.chat-heading .knock-button[aria-disabled='true'],
+.chat-heading .knock-button[aria-disabled='true']:hover,
+.chat-heading .knock-button[aria-disabled='true']:active {
+  transform: none;
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.chat-heading .knock-receipt {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px dashed var(--rule);
+  border-radius: var(--radius-chip);
+  background: color-mix(in srgb, var(--paper) 62%, var(--sheet));
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.chat-intro {
+  margin-top: var(--space-2);
+  color: var(--deep);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.chat-known {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 16%, var(--paper));
+  color: var(--soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-heading .now.is-compact {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 16%, var(--paper));
+}
+
+.chat-workspace {
+  min-width: 0;
+  min-height: 360px;
+  padding-block: var(--space-4) var(--space-8);
+}
+
+.chat-workspace .account-bar {
+  margin-bottom: var(--space-3);
+}
+
+.chat-loading {
+  margin-bottom: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--sheet) 68%, var(--paper));
+  font-size: 14px;
+}
+
+.chat-empty {
+  margin: var(--space-4) 0 var(--space-6);
+  padding: var(--space-6) var(--space-4);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--sheet) 65%, var(--paper));
+  color: var(--soft);
+  font-size: 15px;
+  text-align: center;
+}
+
+.chat-status {
+  display: grid;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--sheet) 65%, var(--paper));
+  color: var(--deep);
+  font-size: 13px;
+  line-height: 1.6;
+  scroll-margin-bottom: 156px;
+}
+
+.chat-status:empty {
+  display: none;
+}
+
+.chat-activity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--soft);
+  font-weight: 500;
+}
+
+.chat-activity.is-live {
+  color: var(--deep);
+  font-weight: 600;
+}
+
+.chat-activity.is-live::before {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: '';
+}
+
+.chat-latest-reply {
+  color: var(--soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.chat-offline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  color: var(--error);
+}
+
+.chat-alert {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border: 1px dashed color-mix(in srgb, var(--error) 55%, var(--paper));
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--error) 5%, var(--sheet));
+  scroll-margin-bottom: 156px;
+}
+
+.chat-inline-retry {
+  min-height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 输入区：暖纸写字托盘贴在视口底部，与纸条保持清楚层次，窄屏紧凑不挡最后一张。 */
+.chat-composer {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3) 0 calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--paper) 0%, transparent) 0%,
+    var(--paper) 14px
+  );
+}
+
+.chat-composer-box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, var(--paper));
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    4px 5px 0 var(--shade);
+  transition: border-color var(--duration-press) ease;
+}
+
+.chat-composer-box:focus-within {
+  border-color: var(--ink);
+}
+
+.chat-composer-box.is-disabled {
+  background: color-mix(in srgb, var(--sheet) 76%, var(--paper));
+}
+
+.chat-composer textarea {
+  min-height: 40px;
+  max-height: 200px;
+  padding: 7px 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  resize: none;
+  line-height: 1.55;
+}
+
+.chat-composer textarea:focus-visible {
+  outline: none;
+}
+
+.chat-composer-box:has(textarea:focus-visible) {
+  outline: 2px dashed var(--ink);
+  outline-offset: 2px;
+}
+
+.chat-send {
+  min-height: 40px;
+  padding: 8px 16px;
+  border-width: 1px;
+  box-shadow: 2px 3px 0 var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chat-send:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 4px 0 var(--accent);
+}
+
+.chat-send:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--accent);
+}
+
+.chat-send[aria-disabled='true'],
+.chat-send[aria-disabled='true']:hover,
+.chat-send[aria-disabled='true']:active {
+  transform: none;
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.chat-help {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  padding-inline: var(--space-1);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.chat-help-count {
+  color: var(--atext);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .chat-heading,
+  .chat-heading.is-known {
+    margin-top: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .chat-known {
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    font-size: 13px;
+  }
+
+  .chat-workspace {
+    padding-block: var(--space-3) var(--space-6);
+  }
+
+  .chat-composer {
+    padding-top: var(--space-2);
+    padding-bottom: calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .chat-composer-box {
+    padding: 6px 6px 6px var(--space-3);
+  }
+
+  .chat-send {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .chat-help-key {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .chat-send {
+    padding: 7px 11px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-heading .knock-button,
+  .chat-composer-box,
+  .chat-send {
+    transition: none;
+  }
+
+  .chat-heading .knock-button:hover,
+  .chat-heading .knock-button:active,
+  .chat-send:hover,
+  .chat-send:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "synthetic": true,
+  "description": "由合成协议经真实收件、投递、停止/结算及结果发布流程生成；ID与时刻归一化，事件完整保留。不是线上任务。",
+  "scenarios": [
+    {
+      "name": "completed",
+      "task_status": "completed",
+      "results": {
+        "results": [
+          {
+            "id": "7c5b4e3a-623d-5fe3-8bef-e91db1579916",
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "input_id": "05ea56c0-756a-5a6d-9edf-f7c894bb7fd9",
+            "outcome": "completed",
+            "observed_at": 1792231200,
+            "output": {
+              "answer": {
+                "state": "available",
+                "body": "合成结果",
+                "reason": null
+              },
+              "actions": {
+                "command_calls": 1,
+                "file_change_calls": 0
+              }
+            }
+          }
+        ]
+      },
+      "events": {
+        "events": [
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 1,
+            "kind": "task_status",
+            "state": "queued",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 2,
+            "kind": "input_delivery",
+            "state": "queued",
+            "input_id": "05ea56c0-756a-5a6d-9edf-f7c894bb7fd9",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 3,
+            "kind": "input_delivery",
+            "state": "sending",
+            "input_id": "05ea56c0-756a-5a6d-9edf-f7c894bb7fd9",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 4,
+            "kind": "task_status",
+            "state": "running",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 5,
+            "kind": "input_delivery",
+            "state": "acknowledged",
+            "input_id": "05ea56c0-756a-5a6d-9edf-f7c894bb7fd9",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 6,
+            "kind": "task_status",
+            "state": "completed",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4781d2c7-724a-514e-971d-a2bd3fa05562",
+            "sequence": 7,
+            "kind": "turn_result",
+            "state": "completed",
+            "input_id": "05ea56c0-756a-5a6d-9edf-f7c894bb7fd9",
+            "result_id": "7c5b4e3a-623d-5fe3-8bef-e91db1579916",
+            "recorded_at": 1792231200
+          }
+        ],
+        "next_after": 7,
+        "has_more": false
+      }
+    },
+    {
+      "name": "completed-turn-stopped-task",
+      "task_status": "cancelled",
+      "results": {
+        "results": [
+          {
+            "id": "91ed968f-8559-58a6-aaab-673e23bb35a6",
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "input_id": "3ac15d71-b38a-5472-bb5f-821d4824a938",
+            "outcome": "completed",
+            "observed_at": 1792231200,
+            "output": {
+              "answer": {
+                "state": "available",
+                "body": "合成结果",
+                "reason": null
+              },
+              "actions": {
+                "command_calls": 1,
+                "file_change_calls": 0
+              }
+            }
+          }
+        ]
+      },
+      "events": {
+        "events": [
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 1,
+            "kind": "task_status",
+            "state": "queued",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 2,
+            "kind": "input_delivery",
+            "state": "queued",
+            "input_id": "3ac15d71-b38a-5472-bb5f-821d4824a938",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 3,
+            "kind": "input_delivery",
+            "state": "sending",
+            "input_id": "3ac15d71-b38a-5472-bb5f-821d4824a938",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 4,
+            "kind": "task_status",
+            "state": "running",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 5,
+            "kind": "input_delivery",
+            "state": "acknowledged",
+            "input_id": "3ac15d71-b38a-5472-bb5f-821d4824a938",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 6,
+            "kind": "task_status",
+            "state": "stopping",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 7,
+            "kind": "task_status",
+            "state": "cancelled",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "4ec312d7-aacb-54fa-a78d-81d7240663e8",
+            "sequence": 8,
+            "kind": "turn_result",
+            "state": "completed",
+            "input_id": "3ac15d71-b38a-5472-bb5f-821d4824a938",
+            "result_id": "91ed968f-8559-58a6-aaab-673e23bb35a6",
+            "recorded_at": 1792231200
+          }
+        ],
+        "next_after": 8,
+        "has_more": false
+      }
+    },
+    {
+      "name": "unknown-without-receipt",
+      "task_status": "needs_reconciliation",
+      "results": {
+        "results": []
+      },
+      "events": {
+        "events": [
+          {
+            "task_id": "7f9c3a4c-d7be-5b8f-a9ac-a75977e887a3",
+            "sequence": 1,
+            "kind": "task_status",
+            "state": "queued",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "7f9c3a4c-d7be-5b8f-a9ac-a75977e887a3",
+            "sequence": 2,
+            "kind": "input_delivery",
+            "state": "queued",
+            "input_id": "67853010-9c10-5f4e-a3d5-66ac78cf4e25",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "7f9c3a4c-d7be-5b8f-a9ac-a75977e887a3",
+            "sequence": 3,
+            "kind": "input_delivery",
+            "state": "sending",
+            "input_id": "67853010-9c10-5f4e-a3d5-66ac78cf4e25",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "7f9c3a4c-d7be-5b8f-a9ac-a75977e887a3",
+            "sequence": 4,
+            "kind": "task_status",
+            "state": "running",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "7f9c3a4c-d7be-5b8f-a9ac-a75977e887a3",
+            "sequence": 5,
+            "kind": "input_delivery",
+            "state": "acknowledged",
+            "input_id": "67853010-9c10-5f4e-a3d5-66ac78cf4e25",
+            "result_id": null,
+            "recorded_at": 1792231200
+          },
+          {
+            "task_id": "7f9c3a4c-d7be-5b8f-a9ac-a75977e887a3",
+            "sequence": 6,
+            "kind": "task_status",
+            "state": "needs_reconciliation",
+            "input_id": null,
+            "result_id": null,
+            "recorded_at": 1792231200
+          }
+        ],
+        "next_after": 6,
+        "has_more": false
+      }
+    }
+  ]
+}

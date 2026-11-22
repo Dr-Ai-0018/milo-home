@@ -1,0 +1,4493 @@
+{
+  "synthetic": true,
+  "contract_version": 1,
+  "observed_at": 1795183200,
+  "paths": {
+    "activity": "/api/conversations/00000000-0000-0000-0000-000000000002/activity",
+    "messages": "/api/conversations/00000000-0000-0000-0000-000000000002/messages",
+    "conversations": "/api/threads/00000000-0000-0000-0000-000000000001/conversations",
+    "task": "/api/work-tasks/00000000-0000-0000-0000-000000000028",
+    "session": "/api/work-sessions/00000000-0000-0000-0000-000000000029",
+    "receipt": "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt"
+  },
+  "cases": [
+    {
+      "name": "merged_and_no_reply",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "reply_bodies": 1,
+        "decision_states": [
+          "replied",
+          "replied",
+          "no_reply"
+        ],
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "all_no_reply",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            }
+          ],
+          "next_after": 3,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 3,
+            "last_message_at": 1795183102,
+            "last_message_role": "visitor",
+            "last_reply_at": null,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 0,
+              "no_reply_count": 3,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": null,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 0,
+            "no_reply_count": 3,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "本轮成功但没有回复正文；不显示故障或逐条催促。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "mixed_reply_defer_no_reply",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "deferred",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "scheduled",
+                  "due_at": 1795186800,
+                  "updated_at": 1795183190,
+                  "blocked_reason": null
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 1,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 1,
+              "no_reply_count": 1,
+              "deferred_count": 1,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 1,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": 1795183100,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "waiting"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 1,
+            "no_reply_count": 1,
+            "deferred_count": 1,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 1,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": 1795186800
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "一条回复、一条留待回访、一条不需回复；无永久跟读。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "letter_mixed_decisions",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "deferred",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "scheduled",
+                  "due_at": 1795186800,
+                  "updated_at": 1795183190,
+                  "blocked_reason": null
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "letter",
+            "title": "[合成样例] 一封留待再聊的信",
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 1,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 1,
+              "no_reply_count": 1,
+              "deferred_count": 1,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 1,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": 1795183100,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "waiting"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 1,
+            "no_reply_count": 1,
+            "deferred_count": 1,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 1,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": 1795186800
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "长信使用同一决定契约，合回、暂缓和不需回复不依赖纸条页面。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "deferred_due_reception_blocked",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "deferred",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "blocked",
+                  "due_at": 1795183190,
+                  "updated_at": 1795183190,
+                  "blocked_reason": "reception"
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 1,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 1,
+              "no_reply_count": 1,
+              "deferred_count": 1,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 1,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": 1795183100,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "waiting"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 1,
+            "no_reply_count": 1,
+            "deferred_count": 1,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "later",
+            "resume_on": "at_time",
+            "until": 1795186800,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 1,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 1,
+            "reconciliation_count": 0,
+            "next_due_at": 1795183190
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "到期但本人稍后看，不误报失败，不反复调用。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "revisit_running_without_new_message",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "running",
+                  "due_at": 1795183199,
+                  "updated_at": 1795183190,
+                  "blocked_reason": null
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "running",
+          "heartbeat_at": 1795183200,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 1,
+            "ready_count": 0,
+            "active_count": 1,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": 1795183199
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "只有回访在执行，原留言已处理；是否显示活动取实际heartbeat。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "revisit_ready_without_new_message",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "scheduled",
+                  "due_at": 1795183199,
+                  "updated_at": 1795183190,
+                  "blocked_reason": null
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 1,
+            "ready_count": 1,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": 1795183199
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "无新来信但有真实就绪回访，服务证据有效时允许有限跟读。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "revisit_needs_reconciliation",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "needs_reconciliation",
+                  "due_at": 1795183190,
+                  "updated_at": 1795183190,
+                  "blocked_reason": null
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "unknown",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "needs_reconciliation"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 1,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 1,
+            "next_due_at": 1795183190
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "未知投递保留待核对，不当作普通暂缓或重复运行。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "follow_up_after_reply",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000015",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 5,
+              "role": "milo",
+              "body": "[合成样例] 想好后回来补这一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183199,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 5,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 5,
+            "last_message_at": 1795183199,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183199,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183199,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "原回复后又有一份补话，原决定不回到待回，正文各显示一次。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "reception_at_time",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "focusing",
+            "resume_on": "at_time",
+            "until": 1795186800,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "focusing",
+            "resume_on": "at_time",
+            "until": 1795186800,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "接收选择与服务启用、作息、在线状态分开。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "reception_new_input",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "resting",
+            "resume_on": "new_input",
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "resting",
+            "resume_on": "new_input",
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "接收选择与服务启用、作息、在线状态分开。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "reception_explicit",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "later",
+            "resume_on": "explicit",
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "later",
+            "resume_on": "explicit",
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "接收选择与服务启用、作息、在线状态分开。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "work_deferred",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "deferred",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 这件留到约好的时间再看。",
+            "revisit": {
+              "id": "00000000-0000-0000-0000-000000000032",
+              "revision": 1,
+              "state": "scheduled",
+              "due_at": 1795186800,
+              "updated_at": 1795183190,
+              "blocked_reason": null
+            }
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 这件留到约好的时间再看。"
+        }
+      },
+      "expected": {
+        "note": "业务决定优先于旧轮次结束文案，原单补话和回执保留。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "work_declined",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "declined",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 这件我先不接，原因已经说明。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 这件我先不接，原因已经说明。"
+        }
+      },
+      "expected": {
+        "note": "业务决定优先于旧轮次结束文案，原单补话和回执保留。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "work_needs_clarification",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "needs_clarification",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 先在这张单补充一下范围，再继续。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 先在这张单补充一下范围，再继续。"
+        }
+      },
+      "expected": {
+        "note": "业务决定优先于旧轮次结束文案，原单补话和回执保留。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "service_fault_is_not_no_reply",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "faulted",
+            "reason": "execution_fault",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "真实服务故障和本人决定分开；不吞故障，也不把no_reply画红。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "evidence_expires",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183201,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183201
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183201
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "浏览器时钟前进2秒后接收与活动证据降未知，不保留旧的正常承诺。",
+        "poll_for_deferred": false,
+        "advance_seconds": 2
+      }
+    },
+    {
+      "name": "cancelled_revisit",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": {
+                  "id": "00000000-0000-0000-0000-000000000032",
+                  "revision": 1,
+                  "state": "cancelled",
+                  "due_at": 1795186800,
+                  "updated_at": 1795183190,
+                  "blocked_reason": null
+                }
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "已取消的补话不再显示为未来安排，不复活旧意图。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "new_input_reception_revision",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": {
+                "state": "replied",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": "00000000-0000-0000-0000-000000000014",
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": {
+                "state": "no_reply",
+                "revision": 1,
+                "decided_at": 1795183190,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": [
+                "00000000-0000-0000-0000-00000000000a",
+                "00000000-0000-0000-0000-00000000000b"
+              ]
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000d",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 5,
+              "role": "visitor",
+              "body": "[合成样例] 又来一张新纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183200,
+              "reply_decision": {
+                "state": "unprocessed",
+                "revision": null,
+                "decided_at": null,
+                "reply_id": null,
+                "revisit": null
+              },
+              "reply_to_ids": []
+            }
+          ],
+          "next_after": 5,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 1,
+            "message_count": 5,
+            "last_message_at": 1795183200,
+            "last_message_role": "visitor",
+            "last_reply_at": 1795183190,
+            "reply_summary": {
+              "unprocessed_count": 1,
+              "replied_count": 2,
+              "no_reply_count": 1,
+              "deferred_count": 0,
+              "unknown_count": 0
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 1,
+            "available_count": 1,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": 1795183100,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "waiting"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 1,
+            "replied_count": 2,
+            "no_reply_count": 1,
+            "deferred_count": 0,
+            "unknown_count": 0
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 2,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 2,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "新增输入解除new_input接收限制；原已处理决定不丢失。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "legacy_unknown_decisions",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": null,
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": null,
+              "reply_to_ids": []
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": null,
+              "reply_to_ids": []
+            }
+          ],
+          "next_after": 3,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 3,
+            "message_count": 3,
+            "last_message_at": 1795183102,
+            "last_message_role": "visitor",
+            "last_reply_at": null,
+            "reply_summary": {
+              "unprocessed_count": 0,
+              "replied_count": 0,
+              "no_reply_count": 0,
+              "deferred_count": 0,
+              "unknown_count": 3
+            }
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": null,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 3,
+            "available_count": 3,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": 1795183100,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "waiting"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": {
+            "unprocessed_count": 0,
+            "replied_count": 0,
+            "no_reply_count": 0,
+            "deferred_count": 0,
+            "unknown_count": 3
+          },
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "revisits": {
+            "pending_count": 0,
+            "ready_count": 0,
+            "active_count": 0,
+            "blocked_count": 0,
+            "reconciliation_count": 0,
+            "next_due_at": null
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": {
+            "state": "accepted",
+            "revision": 1,
+            "decided_at": 1795183190,
+            "receipt": "[合成样例] 已完成本次整理。",
+            "revisit": null
+          }
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": {
+            "scope": "all",
+            "mode": "available",
+            "resume_on": null,
+            "until": null,
+            "revision": 1,
+            "updated_at": 1795183190,
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "旧消息缺少决定证据，unknown不是已读、不回或故障。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "legacy_missing_fields",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          }
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "旧后端平滑保持旧语义，不能伪造新决定。",
+        "poll_for_deferred": false
+      }
+    },
+    {
+      "name": "legacy_null_fields",
+      "responses": {
+        "/api/conversations/00000000-0000-0000-0000-000000000002/messages": {
+          "messages": [
+            {
+              "id": "00000000-0000-0000-0000-00000000000a",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 1,
+              "role": "visitor",
+              "body": "[合成样例] 第1张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183100,
+              "reply_decision": null,
+              "reply_to_ids": null
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000b",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 2,
+              "role": "visitor",
+              "body": "[合成样例] 第2张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183101,
+              "reply_decision": null,
+              "reply_to_ids": null
+            },
+            {
+              "id": "00000000-0000-0000-0000-00000000000c",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 3,
+              "role": "visitor",
+              "body": "[合成样例] 第3张纸条。",
+              "in_reply_to": null,
+              "created_at": 1795183102,
+              "reply_decision": null,
+              "reply_to_ids": null
+            },
+            {
+              "id": "00000000-0000-0000-0000-000000000014",
+              "thread_id": "00000000-0000-0000-0000-000000000001",
+              "conversation_id": "00000000-0000-0000-0000-000000000002",
+              "sequence": 4,
+              "role": "milo",
+              "body": "[合成样例] 这两张我合着回一句。",
+              "in_reply_to": "00000000-0000-0000-0000-00000000000a",
+              "created_at": 1795183190,
+              "reply_decision": null,
+              "reply_to_ids": null
+            }
+          ],
+          "next_after": 4,
+          "next_before": 1,
+          "has_more_before": false
+        },
+        "/api/threads/00000000-0000-0000-0000-000000000001/conversations": [
+          {
+            "id": "00000000-0000-0000-0000-000000000002",
+            "thread_id": "00000000-0000-0000-0000-000000000001",
+            "kind": "chat",
+            "title": null,
+            "is_default": false,
+            "created_at": 1795182200,
+            "pending_count": 0,
+            "message_count": 4,
+            "last_message_at": 1795183190,
+            "last_message_role": "milo",
+            "last_reply_at": 1795183190,
+            "reply_summary": null
+          }
+        ],
+        "/api/conversations/00000000-0000-0000-0000-000000000002/activity": {
+          "observed_at": 1795183200,
+          "valid_until": 1795183245,
+          "response_phase": "working",
+          "processing": "idle",
+          "heartbeat_at": null,
+          "latest_reply_at": 1795183190,
+          "automatic_processing": "enabled",
+          "automatic_reason": "management_lease_current",
+          "reply_queue": {
+            "pending_count": 0,
+            "available_count": 0,
+            "reserved_count": 0,
+            "retry_wait_count": 0,
+            "blocked_count": 0,
+            "oldest_pending_at": null,
+            "retry_after": null,
+            "clock_invalid": false,
+            "reason": "nothing_pending"
+          },
+          "reply_service": {
+            "state": "scheduled",
+            "reason": "check_current",
+            "observed_at": 1795183200,
+            "valid_until": 1795183245
+          },
+          "reply_summary": null,
+          "reception": null,
+          "revisits": null
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028": {
+          "id": "00000000-0000-0000-0000-000000000028",
+          "session_id": "00000000-0000-0000-0000-000000000029",
+          "sequence": 1,
+          "status": "completed",
+          "created_at": 1795183100,
+          "updated_at": 1795183190,
+          "stop_requested_at": null,
+          "initial_input": {
+            "id": "00000000-0000-0000-0000-00000000002a",
+            "task_id": "00000000-0000-0000-0000-000000000028",
+            "sequence": 1,
+            "kind": "initial",
+            "body": "[合成样例] 请整理这件事。",
+            "delivery": "acknowledged",
+            "created_at": 1795183100,
+            "active_turn": null
+          },
+          "deliverable": null,
+          "active_turn": null,
+          "execution_available": false,
+          "decision": null
+        },
+        "/api/work-sessions/00000000-0000-0000-0000-000000000029": {
+          "id": "00000000-0000-0000-0000-000000000029",
+          "workspace_id": "00000000-0000-0000-0000-00000000002b",
+          "created_at": 1795182200,
+          "execution_available": false,
+          "reception": null
+        },
+        "/api/work-tasks/00000000-0000-0000-0000-000000000028/receipt": {
+          "state": "available",
+          "text": "[合成样例] 已完成本次整理。"
+        }
+      },
+      "expected": {
+        "note": "旧后端平滑保持旧语义，不能伪造新决定。",
+        "poll_for_deferred": false
+      }
+    }
+  ]
+}

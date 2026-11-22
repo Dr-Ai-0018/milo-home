@@ -1,0 +1,228 @@
+/* 主题小图标与彩蛋 */
+.ink-doodle {
+  position: relative;
+  display: inline-flex;
+}
+
+.ink-doodle-button,
+.ink-doodle-button:hover,
+.ink-doodle-button:active {
+  position: relative;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--atext);
+  transform: none;
+}
+
+.ink-doodle-icon {
+  overflow: visible;
+  transition: transform 280ms var(--ease-stamp);
+}
+
+.ink-doodle-button:hover .ink-doodle-icon {
+  transform: translateY(-1.5px) rotate(-6deg) scale(1.06);
+}
+
+.ink-doodle-tint {
+  fill: color-mix(in srgb, var(--accent) 44%, transparent);
+  stroke: none;
+}
+
+.ink-doodle-stroke {
+  fill: none;
+  stroke: var(--atext);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ink-doodle-accent-stroke {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ink-doodle-ring {
+  position: absolute;
+  inset: 3px;
+  border: 1.5px dashed color-mix(in srgb, var(--accent) 70%, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
+.ink-doodle-button.is-wa .ink-doodle-ring {
+  animation: ink-ring-a 720ms var(--ease-paper) both;
+}
+
+.ink-doodle-button.is-wb .ink-doodle-ring {
+  animation: ink-ring-b 720ms var(--ease-paper) both;
+}
+
+.ink-doodle-button.is-wa .ink-doodle-icon {
+  animation: ink-wiggle-a 640ms var(--ease-stamp);
+}
+
+.ink-doodle-button.is-wb .ink-doodle-icon {
+  animation: ink-wiggle-b 640ms var(--ease-stamp);
+}
+
+@keyframes ink-wiggle-a {
+  0% {
+    transform: scale(1);
+  }
+  28% {
+    transform: rotate(-14deg) scale(1.22);
+  }
+  62% {
+    transform: rotate(7deg) scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ink-wiggle-b {
+  0% {
+    transform: scale(1);
+  }
+  28% {
+    transform: rotate(-14deg) scale(1.22);
+  }
+  62% {
+    transform: rotate(7deg) scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ink-ring-a {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.65) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.48) rotate(35deg);
+  }
+}
+
+@keyframes ink-ring-b {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.65) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.48) rotate(35deg);
+  }
+}
+
+.ink-doodle-spark {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: calc(50% - 7px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ink-doodle-spark path {
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ink-doodle-spark circle {
+  stroke: none;
+}
+
+.ink-doodle-spark.is-accent path {
+  fill: color-mix(in srgb, var(--accent) 45%, transparent);
+  stroke: var(--accent);
+}
+
+.ink-doodle-spark.is-ink circle,
+.ink-doodle-spark.is-ink path {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.ink-doodle-button.is-wa .ink-doodle-spark {
+  animation: ink-spark-a 950ms var(--ease-paper) both;
+}
+
+.ink-doodle-button.is-wb .ink-doodle-spark {
+  animation: ink-spark-b 950ms var(--ease-paper) both;
+}
+
+@keyframes ink-spark-a {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.35) rotate(0deg);
+  }
+  30% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(1.05) rotate(var(--rot, 18deg));
+  }
+}
+
+@keyframes ink-spark-b {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.35) rotate(0deg);
+  }
+  30% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(1.05) rotate(var(--rot, 18deg));
+  }
+}
+
+.ink-doodle-egg {
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+  width: max-content;
+  max-width: min(78vw, 20em);
+  pointer-events: none;
+}
+
+.ink-doodle.egg-start .ink-doodle-egg {
+  left: 0;
+}
+
+.ink-doodle.egg-end .ink-doodle-egg {
+  right: 0;
+  text-align: right;
+}
+
+.ink-doodle-egg-line {
+  display: inline-block;
+  font-size: 24px;
+  animation: ink-egg-pop 500ms var(--ease-stamp) both;
+}
+
+@keyframes ink-egg-pop {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-2deg) scale(1);
+  }
+}

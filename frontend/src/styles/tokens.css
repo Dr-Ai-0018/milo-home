@@ -1,0 +1,58 @@
+/* 自托管 Long Cang 子集（OFL），只覆盖固定手写文案；不在运行时请求外部字体。 */
+@font-face {
+  font-family: 'Milo Hand';
+  src: url('/fonts/long-cang-subset.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+
+  /* 墨层：默认值等同「元气」主题，运行时由 src/theme/inks.ts 覆盖。 */
+  --ink: #2f4aa8;
+  --deep: #1d2c66;
+  --soft: #4b5a92;
+  --accent: #ff7a2e;
+  --stamp: #e0561a;
+  --atext: #b4430c;
+  --paper: #f3f1ec;
+
+  --sheet: #fff;
+  --gridline: color-mix(in srgb, var(--ink) 17%, #fff);
+  --tint: color-mix(in srgb, var(--accent) 24%, var(--paper));
+  --tint2: color-mix(in srgb, var(--accent) 40%, var(--paper));
+  --tint3: color-mix(in srgb, var(--accent) 30%, var(--paper));
+  --shade: color-mix(in srgb, var(--ink) 12%, transparent);
+  --rule: color-mix(in srgb, var(--ink) 28%, var(--paper));
+  --error: #b3261e;
+
+  --font-body:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+  /* 手写体只用于旁白与彩蛋，缺字时回落到正文字体。 */
+  --font-hand: 'Milo Hand', var(--font-body);
+  --font-num: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* 克制圆角：纸面 4–6px，控件 6–8px，不用胶囊。 */
+  --radius-paper: 5px;
+  --radius-chip: 4px;
+  --radius-control: 8px;
+  --line-width: 1.5px;
+  --press-offset: 4px;
+
+  --ease-paper: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-fold: cubic-bezier(0.6, 0, 0.4, 1);
+  /* 弹性曲线只给盖章与彩蛋。 */
+  --ease-stamp: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-press: 150ms;
+  --duration-paper: 450ms;
+}

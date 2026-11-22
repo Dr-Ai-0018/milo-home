@@ -1,0 +1,336 @@
+/* 首页作息实用告示与近况编辑网格样式（沿用无硬框纸面层级）。 */
+.home-section-eyebrow {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+/* 作息实用告示卡：复用 PaperSheet 无硬框纸面，固定表盘占位与正文高度，消除到达跳动。 */
+.home-schedule-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 232px;
+  align-items: center;
+  gap: var(--space-6) var(--space-8);
+}
+
+.home-schedule-body {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.home-schedule-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+}
+
+.home-schedule-timezone {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.home-schedule-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  min-height: 92px;
+}
+
+.home-schedule-copy {
+  flex: 1 1 240px;
+  display: grid;
+  gap: var(--space-1);
+}
+
+.home-schedule-line {
+  min-height: 3.3em;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--deep);
+}
+
+.home-schedule-aside {
+  min-height: 30px;
+}
+
+.home-schedule-boundary {
+  max-width: 38em;
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.home-schedule-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--gridline);
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.home-schedule-again {
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-schedule-alert {
+  color: var(--error);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-schedule-dial {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+}
+
+.home-schedule-dial .schedule-clock {
+  width: 210px;
+}
+
+.home-schedule-dial figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px var(--space-3);
+  min-height: 44px;
+  color: var(--deep);
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* 「家里最近」：一条横向信纸主稿 + 下方并排两栏日期短讯 */
+.home-notes-section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.home-notes-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.home-notes-heading-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+
+.home-notes-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.home-notes-all-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home-notes-reload,
+.home-notes-retry {
+  min-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-notes-sub {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.home-notes-notice {
+  padding-block: var(--space-2);
+  border-top: 1px solid var(--gridline);
+  border-bottom: 1px solid var(--gridline);
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.home-notes-notice.is-warn {
+  border-color: color-mix(in srgb, var(--error) 35%, var(--paper));
+  color: var(--error);
+}
+
+.home-notes-state {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
+  min-height: 92px;
+  padding-block: var(--space-4);
+  border-top: 1px dashed var(--rule);
+  border-bottom: 1px dashed var(--rule);
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.home-notes-state.is-error {
+  border-color: color-mix(in srgb, var(--error) 45%, var(--paper));
+  color: var(--error);
+}
+
+.home-notes-stack {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.home-lead-note {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.home-note-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: var(--soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-note-kind {
+  color: var(--atext);
+  font-weight: 700;
+}
+
+.home-lead-note-title {
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 700;
+  color: var(--deep);
+  overflow-wrap: anywhere;
+}
+
+.home-note-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home-note-link:hover {
+  color: var(--atext);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+}
+
+.home-lead-note-text {
+  max-width: 38em;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.home-note-readmore {
+  margin-top: var(--space-1);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-index-block {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.home-index-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.home-index-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-index-item {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  min-width: 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--rule);
+}
+
+.home-index-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--deep);
+  overflow-wrap: anywhere;
+}
+
+.home-index-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--soft);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 800px) {
+  .home-index-list,
+  .home-schedule-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-schedule-line {
+    min-height: 4.8em;
+  }
+
+  .home-schedule-dial {
+    grid-template-columns: 136px minmax(0, 1fr);
+    align-items: center;
+    justify-items: start;
+    gap: var(--space-3);
+  }
+
+  .home-schedule-dial .schedule-clock {
+    width: 136px;
+  }
+
+  .home-schedule-dial figcaption {
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-schedule-card,
+  .home-lead-note {
+    padding: var(--space-4);
+  }
+
+  .home-schedule-dial {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
+
+  .home-schedule-dial .schedule-clock {
+    width: 120px;
+  }
+}

@@ -1,0 +1,320 @@
+/* 单封长信页：返回行、暖纸页头、敲门收敛与独立页面状态；不改动书信列表样式。 */
+.letter-page {
+  max-width: 740px;
+  margin-inline: auto;
+  min-width: 0;
+  min-height: 360px;
+  padding-block: var(--space-4) var(--space-12);
+}
+
+.letter-page .back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: var(--space-3);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.letter-page .account-bar {
+  margin-bottom: var(--space-3);
+}
+
+/* 页头：沿用无硬框暖纸卡片与 700 标题字重，把呼吸留给下面的长信正文。 */
+.letter-page .conversation-header {
+  margin-bottom: var(--space-6);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border: 0;
+  border-radius: var(--radius-paper);
+  background: var(--sheet);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    5px 6px 0 var(--shade);
+}
+
+.letter-page .knock-row {
+  align-items: flex-start;
+  gap: var(--space-2) var(--space-4);
+}
+
+.letter-page .letter-title {
+  margin: 0;
+  font-size: clamp(24px, 3.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.32;
+  overflow-wrap: anywhere;
+}
+
+.letter-page .letter-title:focus {
+  outline: none;
+}
+
+.letter-page .letter-title:focus-visible {
+  outline: 2px dashed var(--atext);
+  outline-offset: 4px;
+}
+
+.letter-page .conversation-header .overprint {
+  text-shadow: 0.04em 0.03em 0 color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.letter-page .knock-button {
+  min-height: 38px;
+  padding: 5px 12px;
+  border: 1px solid color-mix(in srgb, var(--ink) 26%, var(--paper));
+  box-shadow: 2px 3px 0 color-mix(in srgb, var(--accent) 55%, var(--paper));
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.letter-page .knock-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 4px 0 color-mix(in srgb, var(--accent) 68%, var(--paper));
+}
+
+.letter-page .knock-button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 color-mix(in srgb, var(--accent) 55%, var(--paper));
+}
+
+.letter-page .knock-button[aria-disabled='true'],
+.letter-page .knock-button[aria-disabled='true']:hover,
+.letter-page .knock-button[aria-disabled='true']:active {
+  transform: none;
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.letter-page .knock-receipt {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px dashed var(--rule);
+  border-radius: var(--radius-chip);
+  background: color-mix(in srgb, var(--paper) 62%, var(--sheet));
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.letter-page .pending-line {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 16%, var(--paper));
+  color: var(--soft);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.55;
+}
+
+.letter-page .letter-activity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  margin-top: var(--space-2);
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.letter-page .letter-activity.is-live {
+  color: var(--deep);
+  font-weight: 600;
+}
+
+.letter-page .letter-activity.is-live::before {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: '';
+  transform: none;
+}
+
+.letter-page .letter-offline {
+  color: var(--error);
+}
+
+.letter-page .letter-state-card {
+  margin: var(--space-4) 0;
+  padding: var(--space-6) var(--space-4);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--sheet) 70%, var(--paper));
+  color: var(--soft);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* 续写纸面：像翻到信纸本的新一页；Enter 保持换行，按钮明确保存。 */
+.letter-page .letter-composer {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  border: 0;
+  border-radius: var(--radius-paper);
+  background: var(--sheet);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    5px 6px 0 var(--shade);
+}
+
+.letter-page .letter-composer label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin-bottom: var(--space-3);
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.letter-page .letter-composer textarea {
+  min-height: 168px;
+  padding: 14px 16px;
+  border: 1px solid color-mix(in srgb, var(--ink) 22%, var(--paper));
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--paper) 28%, var(--sheet));
+  color: var(--deep);
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.letter-page .letter-composer textarea:focus-visible {
+  border-color: var(--ink);
+  background: var(--sheet);
+  outline: 2px dashed var(--ink);
+  outline-offset: 2px;
+}
+
+.letter-page .letter-composer textarea[readonly] {
+  background: color-mix(in srgb, var(--paper) 55%, var(--sheet));
+  color: var(--soft);
+}
+
+.letter-page .letter-trouble {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed color-mix(in srgb, var(--error) 55%, var(--paper));
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--error) 5%, var(--sheet));
+}
+
+.letter-page .letter-trouble .feedback {
+  min-height: 0;
+  margin-top: 0;
+}
+
+.letter-page .letter-trouble-retry {
+  min-height: 38px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.letter-page .composer-actions {
+  margin-top: var(--space-4);
+  gap: var(--space-3);
+}
+
+.letter-page .composer-count {
+  font-variant-numeric: tabular-nums;
+}
+
+.letter-page .composer-send {
+  min-height: 46px;
+  padding: 10px 24px;
+  border-width: 1px;
+  box-shadow: 3px 3px 0 var(--accent);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.letter-page .composer-send:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--accent);
+}
+
+.letter-page .composer-send:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--accent);
+}
+
+.letter-page .composer-send[aria-disabled='true'],
+.letter-page .composer-send[aria-disabled='true']:hover,
+.letter-page .composer-send[aria-disabled='true']:active {
+  transform: none;
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+  opacity: 0.56;
+  cursor: not-allowed;
+}
+
+.letter-page .composer-done {
+  min-height: 0;
+  margin-top: 0;
+  gap: var(--space-3);
+}
+
+.letter-page .composer-done.is-visible {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border-top: 1px dashed var(--rule);
+  border-radius: var(--radius-chip);
+  background: color-mix(in srgb, var(--paper) 55%, var(--sheet));
+}
+
+@media (max-width: 600px) {
+  .letter-page {
+    padding-block: var(--space-3) var(--space-8);
+  }
+
+  .letter-page .conversation-header {
+    margin-bottom: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .letter-page .pending-line {
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    font-size: 13px;
+  }
+
+  .letter-page .letter-composer {
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+  }
+
+  .letter-page .letter-composer textarea {
+    min-height: 148px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .letter-page .composer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .letter-page .composer-send {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter-page .knock-button,
+  .letter-page .composer-paper,
+  .letter-page .composer-send {
+    transition: none;
+  }
+
+  .letter-page .knock-button:hover,
+  .letter-page .knock-button:active,
+  .letter-page .letter-composer.is-lifting .composer-paper,
+  .letter-page .composer-send:hover,
+  .letter-page .composer-send:active {
+    transform: none;
+  }
+}

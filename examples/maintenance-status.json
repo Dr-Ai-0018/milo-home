@@ -1,0 +1,480 @@
+{
+  "synthetic": true,
+  "observed_at": 1795233600,
+  "path": "/api/maintenance",
+  "cases": [
+    {
+      "name": "daily_success_is_not_complete_recovery",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795237200,
+        "state": "unknown",
+        "capacity": [
+          {
+            "kind": "journal_hot",
+            "state": "normal",
+            "used_bytes": 1501757,
+            "allocated_bytes": null,
+            "limit_bytes": 33554432,
+            "complete": true,
+            "reason": null
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "normal",
+            "last_attempt_at": 1795233300,
+            "last_success_at": 1795233540,
+            "last_outcome": "succeeded",
+            "fresh_until": 1795406340,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "not_associated"
+          },
+          {
+            "kind": "paired",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "remote",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "restoration",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "name": "verified_facts_are_separate",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795237200,
+        "state": "normal",
+        "capacity": [
+          {
+            "kind": "journal_hot",
+            "state": "normal",
+            "used_bytes": 1501757,
+            "allocated_bytes": null,
+            "limit_bytes": 33554432,
+            "complete": true,
+            "reason": null
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "normal",
+            "last_attempt_at": 1795233570,
+            "last_success_at": 1795233590,
+            "last_outcome": "succeeded",
+            "fresh_until": 1795838390,
+            "snapshot_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "generation_id": null,
+            "reason": null
+          },
+          {
+            "kind": "paired",
+            "state": "normal",
+            "last_attempt_at": 1795233570,
+            "last_success_at": 1795233590,
+            "last_outcome": "succeeded",
+            "fresh_until": 1795838390,
+            "snapshot_id": null,
+            "generation_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "reason": null
+          },
+          {
+            "kind": "remote",
+            "state": "normal",
+            "last_attempt_at": 1795233570,
+            "last_success_at": 1795233590,
+            "last_outcome": "succeeded",
+            "fresh_until": 1795838390,
+            "snapshot_id": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "generation_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "reason": null
+          },
+          {
+            "kind": "restoration",
+            "state": "normal",
+            "last_attempt_at": 1795233570,
+            "last_success_at": 1795233590,
+            "last_outcome": "succeeded",
+            "fresh_until": 1795838390,
+            "snapshot_id": null,
+            "generation_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "reason": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "failed_attempt_preserves_previous_success",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795237200,
+        "state": "attention",
+        "capacity": [
+          {
+            "kind": "journal_hot",
+            "state": "normal",
+            "used_bytes": 1501757,
+            "allocated_bytes": null,
+            "limit_bytes": 33554432,
+            "complete": true,
+            "reason": null
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "attention",
+            "last_attempt_at": 1795233600,
+            "last_success_at": 1795233540,
+            "last_outcome": "failed",
+            "fresh_until": 1795406340,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "last_attempt_failed"
+          },
+          {
+            "kind": "paired",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "remote",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "restoration",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "name": "hot_admission_blocked",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795237200,
+        "state": "blocked",
+        "capacity": [
+          {
+            "kind": "journal_hot",
+            "state": "blocked",
+            "used_bytes": 26000000,
+            "allocated_bytes": null,
+            "limit_bytes": 33554432,
+            "complete": true,
+            "reason": "capacity_full"
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "paired",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "remote",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "restoration",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "name": "protected_mapping_needs_maintenance",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795237200,
+        "state": "blocked",
+        "capacity": [
+          {
+            "kind": "native_mapping",
+            "state": "blocked",
+            "used_bytes": 66584576,
+            "allocated_bytes": null,
+            "limit_bytes": 67108864,
+            "complete": true,
+            "reason": "protected_capacity"
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "paired",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "remote",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "restoration",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bounded_scan_is_lower_bound",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795237200,
+        "state": "unknown",
+        "capacity": [
+          {
+            "kind": "development",
+            "state": "unknown",
+            "used_bytes": 531990294,
+            "allocated_bytes": null,
+            "limit_bytes": null,
+            "complete": false,
+            "reason": "incomplete"
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "paired",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "remote",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          },
+          {
+            "kind": "restoration",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "unavailable"
+          }
+        ]
+      }
+    },
+    {
+      "name": "expired_observation_keeps_history",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795226400,
+        "expires_at": 1795230000,
+        "state": "unknown",
+        "capacity": [
+          {
+            "kind": "journal_hot",
+            "state": "unknown",
+            "used_bytes": 1501757,
+            "allocated_bytes": null,
+            "limit_bytes": 33554432,
+            "complete": true,
+            "reason": "expired"
+          }
+        ],
+        "backups": [
+          {
+            "kind": "daily",
+            "state": "unknown",
+            "last_attempt_at": 1795233300,
+            "last_success_at": 1795233540,
+            "last_outcome": "succeeded",
+            "fresh_until": 1795406340,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "expired"
+          },
+          {
+            "kind": "paired",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "expired"
+          },
+          {
+            "kind": "remote",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "expired"
+          },
+          {
+            "kind": "restoration",
+            "state": "unknown",
+            "last_attempt_at": null,
+            "last_success_at": null,
+            "last_outcome": "unknown",
+            "fresh_until": null,
+            "snapshot_id": null,
+            "generation_id": null,
+            "reason": "expired"
+          }
+        ]
+      }
+    },
+    {
+      "name": "no_observation",
+      "payload": {
+        "version": 1,
+        "observed_at": 1795233600,
+        "expires_at": 1795233600,
+        "state": "unknown",
+        "capacity": [],
+        "backups": []
+      }
+    }
+  ]
+}

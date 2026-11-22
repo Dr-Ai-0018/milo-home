@@ -1,0 +1,54 @@
+/* 合成交办详情样板预览：仅保留预览台与演示专属样式，正式视觉规则已收敛至 work-detail.css 与 work-delivery.css。 */
+.work-detail-preview-page {
+  padding-bottom: var(--space-12);
+}
+
+.work-preview-toast {
+  margin-top: var(--space-2);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.work-preview-composer-keep {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-paper);
+  background: color-mix(in srgb, var(--paper) 48%, #fff);
+}
+
+.work-preview-finished-tip {
+  margin: 0;
+  color: var(--atext);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.work-preview-collapse {
+  border-top: 1px dashed var(--rule);
+  padding-top: var(--space-4);
+}
+
+.work-preview-collapse summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.work-preview-collapse-body {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .work-detail-preview-page .detail-sheet {
+    padding: var(--space-4);
+  }
+}

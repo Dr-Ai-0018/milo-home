@@ -1,0 +1,238 @@
+/* 书信列表：每个主题是一只信封；标题独占全宽不被印章挤压，底部呈现往来时间与待回状态。 */
+.letter-shelf {
+  margin-bottom: var(--space-8);
+}
+
+.letter-stack {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.letter-stack > li {
+  display: flex;
+}
+
+.letter-envelope {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-3);
+  min-height: 112px;
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border-radius: var(--radius-paper);
+  background: var(--sheet);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    5px 6px 0 var(--shade);
+  color: var(--deep);
+  text-decoration: none;
+  transition:
+    transform var(--duration-press) var(--ease-paper),
+    box-shadow var(--duration-press) ease;
+}
+
+.letter-envelope:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 0 color-mix(in srgb, var(--ink) 8%, #e6e2d9),
+    7px 8px 0 var(--shade);
+}
+
+.letter-envelope:hover .envelope-title,
+.letter-envelope:focus-visible .envelope-title {
+  color: var(--ink);
+}
+
+.letter-envelope:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* 信封盖：两条轻柔折线在上沿合成一个浅 V。 */
+.envelope-flap {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 24px;
+  background:
+    linear-gradient(
+        to top right,
+        transparent calc(50% - 1px),
+        color-mix(in srgb, var(--ink) 18%, var(--paper)) 50%,
+        transparent calc(50% + 1px)
+      )
+      left / 50% 100% no-repeat,
+    linear-gradient(
+        to top left,
+        transparent calc(50% - 1px),
+        color-mix(in srgb, var(--ink) 18%, var(--paper)) 50%,
+        transparent calc(50% + 1px)
+      )
+      right / 50% 100% no-repeat;
+  pointer-events: none;
+}
+
+.envelope-title {
+  color: var(--deep);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.48;
+  overflow-wrap: anywhere;
+  transition: color var(--duration-press) ease;
+}
+
+.envelope-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 16%, var(--paper));
+}
+
+.envelope-meta {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+.envelope-stamp.ink-stamp.is-sm {
+  padding: 1px 8px;
+  border-width: 2px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+.envelope-quiet {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+/* 开一封新信：平时收在门牌下沿的一行按钮，展开成表单。 */
+.new-letter {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px dashed var(--rule);
+}
+
+.new-letter.is-closed {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+
+.new-letter-open {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.new-letter label {
+  margin-bottom: 0;
+  color: var(--deep);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.new-letter .primary {
+  font-weight: 700;
+}
+
+.new-letter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  margin-top: var(--space-1);
+}
+
+.new-letter-row input {
+  flex: 1 1 220px;
+  min-width: 0;
+  min-height: 44px;
+}
+
+.new-letter-row button {
+  flex: none;
+}
+
+/* 单封信页 */
+.back-link {
+  display: inline-flex;
+  margin-bottom: var(--space-6);
+  font-size: 14px;
+}
+
+.letter-title {
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+/* 跟读：只在这封信排队或正被读时出现。墨点是静止的，不做闪烁或打字动画。 */
+.letter-activity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin-top: var(--space-2);
+  color: var(--deep);
+  font-size: 14px;
+}
+
+.letter-activity.is-live::before {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: '';
+  transform: translateY(-1px);
+}
+
+.letter-offline {
+  color: var(--error);
+}
+
+@media (max-width: 600px) {
+  .letter-shelf {
+    margin-bottom: var(--space-6);
+  }
+
+  .letter-stack {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* 手机上保证第一屏就能看到信封并顺畅找信。 */
+  .letter-envelope {
+    min-height: 88px;
+    padding: var(--space-6) var(--space-4) var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .new-letter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .new-letter-row input {
+    flex: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter-envelope,
+  .envelope-title {
+    transition: none;
+  }
+
+  .letter-envelope:hover {
+    transform: none;
+  }
+}

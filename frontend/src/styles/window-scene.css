@@ -1,0 +1,398 @@
+/* 窗边静物：手绘双色 Risograph 套印与微光呼吸 */
+.window-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.scene-wall-wash {
+  fill: color-mix(in srgb, var(--ink) 5%, var(--paper));
+}
+
+.ws-sky-top {
+  stop-color: var(--tint);
+  stop-opacity: 0.92;
+}
+
+.ws-sky-bottom {
+  stop-color: var(--paper);
+  stop-opacity: 0.72;
+}
+
+.ws-halo-core {
+  stop-color: var(--accent);
+  stop-opacity: 0.42;
+}
+
+.ws-halo-mid {
+  stop-color: var(--accent);
+  stop-opacity: 0.16;
+}
+
+.ws-halo-edge {
+  stop-color: var(--accent);
+  stop-opacity: 0;
+}
+
+.ws-lamp-core {
+  stop-color: var(--accent);
+  stop-opacity: 0.34;
+}
+
+.ws-lamp-mid {
+  stop-color: var(--accent);
+  stop-opacity: 0.13;
+}
+
+.ws-lamp-edge {
+  stop-color: var(--accent);
+  stop-opacity: 0;
+}
+
+.scene-sun-halo {
+  transform-origin: 298px 112px;
+  animation: ws-halo-pulse 6.5s ease-in-out infinite;
+}
+
+.scene-sun-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+  opacity: 0.55;
+}
+
+.scene-sun {
+  fill: var(--accent);
+}
+
+.scene-clouds {
+  animation: ws-cloud-drift 28s ease-in-out infinite alternate;
+}
+
+.scene-cloud {
+  fill: var(--sheet);
+  opacity: 0.78;
+}
+
+.scene-cloud.is-soft {
+  opacity: 0.52;
+}
+
+.scene-hill-far {
+  fill: color-mix(in srgb, var(--ink) 20%, #fff);
+}
+
+.scene-hill-mid {
+  fill: color-mix(in srgb, var(--ink) 38%, #fff);
+}
+
+.scene-dots {
+  fill: url(#ws-dots);
+  opacity: 0.72;
+}
+
+#ws-dots circle {
+  fill: var(--accent);
+}
+
+.scene-distant-home {
+  fill: color-mix(in srgb, var(--ink) 55%, var(--paper));
+  stroke: color-mix(in srgb, var(--ink) 55%, var(--paper));
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.scene-hill-near {
+  fill: color-mix(in srgb, var(--ink) 56%, #fff);
+}
+
+.scene-glass-sheen {
+  fill: var(--sheet);
+  opacity: 0.2;
+}
+
+.scene-curtain {
+  transform-origin: 124px 52px;
+  animation: ws-curtain-sway 8s ease-in-out infinite;
+}
+
+.scene-curtain-fill {
+  fill: var(--sheet);
+  opacity: 0.68;
+}
+
+.scene-curtain-fold {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0.24;
+}
+
+.scene-window-trim-back {
+  fill: none;
+  stroke: var(--sheet);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scene-window-trim-ink {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.78;
+}
+
+.scene-sill-shadow {
+  fill: var(--shade);
+}
+
+.scene-sill {
+  fill: var(--sheet);
+  stroke: var(--ink);
+  stroke-width: 1.8;
+}
+
+.scene-lamp-glow {
+  animation: ws-lamp-breathe 5.5s ease-in-out infinite;
+}
+
+.scene-table {
+  fill: var(--ink);
+}
+
+.scene-table-edge {
+  fill: var(--deep);
+}
+
+.scene-desk-shadows ellipse {
+  fill: color-mix(in srgb, var(--deep) 18%, transparent);
+}
+
+.scene-foliage {
+  transform-origin: 96px 306px;
+  animation: ws-plant-sway 7.5s ease-in-out infinite;
+}
+
+.scene-stem {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.scene-leaf-tint {
+  fill: color-mix(in srgb, var(--ink) 64%, #fff);
+}
+
+.scene-leaf-line {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scene-pot {
+  fill: var(--accent);
+}
+
+.scene-pot-rim {
+  fill: color-mix(in srgb, var(--accent) 85%, var(--paper));
+  stroke: var(--deep);
+  stroke-width: 1.5;
+}
+
+.scene-pot-stripe {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  opacity: 0.65;
+}
+
+.scene-book-stack {
+  fill: color-mix(in srgb, var(--ink) 12%, var(--sheet));
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+}
+
+.scene-book {
+  fill: var(--sheet);
+}
+
+.scene-ink-line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scene-book-lines {
+  fill: none;
+  stroke: var(--soft);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.scene-ribbon {
+  fill: var(--accent);
+}
+
+.scene-pen path {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.scene-pen .scene-pen-nib {
+  fill: var(--accent);
+  stroke: var(--deep);
+  stroke-width: 1.2;
+}
+
+.scene-steam {
+  fill: none;
+  stroke: var(--soft);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0;
+  animation: ws-steam-rise 4.8s ease-in-out infinite;
+}
+
+.scene-steam.is-b {
+  animation-delay: 2.2s;
+}
+
+.scene-mug-handle {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+
+.scene-mug-body {
+  fill: var(--sheet);
+  stroke: var(--deep);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+}
+
+.scene-mug-band {
+  fill: var(--tint2);
+}
+
+.scene-lamp {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.scene-lamp-base {
+  fill: var(--deep);
+}
+
+.scene-shade {
+  fill: var(--accent);
+}
+
+.scene-shade-rim {
+  fill: none;
+  stroke: var(--deep);
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+.scene-bulb {
+  fill: var(--sheet);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+@keyframes ws-cloud-drift {
+  from {
+    transform: translateX(-8px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes ws-curtain-sway {
+  0%,
+  100% {
+    transform: rotate(0deg) skewX(0deg);
+  }
+  50% {
+    transform: rotate(-0.9deg) skewX(0.6deg);
+  }
+}
+
+@keyframes ws-plant-sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.4deg);
+  }
+}
+
+@keyframes ws-halo-pulse {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes ws-lamp-breathe {
+  0%,
+  100% {
+    opacity: 0.92;
+  }
+  50% {
+    opacity: 0.68;
+  }
+}
+
+@keyframes ws-steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.92);
+  }
+  30% {
+    opacity: 0.45;
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.06);
+  }
+}
+
+.window-scene figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-inline: 5%;
+  margin-top: var(--space-2);
+  color: var(--soft);
+  font-size: 12px;
+}

@@ -1,0 +1,44 @@
+{
+  "timezone": "Asia/Shanghai",
+  "weekdays": {
+    "windows": [
+      {
+        "start": "09:00",
+        "end": "12:00",
+        "phase": "working"
+      },
+      {
+        "start": "14:00",
+        "end": "21:30",
+        "phase": "working"
+      },
+      {
+        "start": "21:30",
+        "end": "22:30",
+        "phase": "winding_down"
+      }
+    ],
+    "fallback": ["09:00", "16:00", "21:00"]
+  },
+  "days_off": {
+    "windows": [
+      {
+        "start": "10:00",
+        "end": "12:00",
+        "phase": "working"
+      },
+      {
+        "start": "16:00",
+        "end": "19:00",
+        "phase": "working"
+      },
+      {
+        "start": "19:00",
+        "end": "20:00",
+        "phase": "winding_down"
+      }
+    ],
+    "fallback": ["10:00", "18:00"]
+  },
+  "relaxed_dates": []
+}

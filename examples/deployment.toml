@@ -1,0 +1,47 @@
+# Isolated local development only. No account, model or timer is activated.
+# Omit app.database to use $XDG_STATE_HOME/milo-home/home.sqlite3,
+# or ~/.local/state/milo-home/home.sqlite3 when XDG_STATE_HOME is absent.
+[app]
+origins = ["http://127.0.0.1:7473"]
+secure_cookie = false
+
+# Production: use your exact HTTPS origin and secure_cookie = true.
+# All configured filesystem paths must be absolute. Choose your own roots.
+# database = "/var/lib/milo-home/home.sqlite3"
+
+# Optional stores require BOTH a root and an explicit positive byte budget.
+# [work_attachments]
+# root = "/var/lib/milo-home/private-files"
+# max_bytes = 536870912
+
+# [public_assets]
+# root = "/var/lib/milo-home/public-files"
+# max_bytes = 268435456
+
+# Existing execution only: setting paths does not register or enable a service.
+# [execution]
+# database_user = "milo-service"
+# run_directory = "/var/lib/milo-home-execution/main"
+# workspace = "/srv/milo-workspace"
+# reply_directory = "/var/lib/milo-home-execution/replies"
+# profile = "/etc/milo-home/provider.toml"
+# credential_file = "/etc/milo-home/provider.key"
+# cli = "/opt/codex/bin/codex"
+# tool_host = "/opt/codex/bin/codex-code-mode-host"
+
+# Private state must stay outside installed code, actual web root and personal roots.
+# Installed package code is always protected. Optional code_root must contain it.
+# [paths]
+# code_root = "/opt/milo-home"
+# static_root = "/srv/www/milo-home"
+# protected_roots = ["/srv/milo-personal"]
+
+# Summary binding requires BOTH file and the actual owner's UUID.
+# Other observation paths are optional; omitted evidence stays unknown.
+# [maintenance]
+# file = "/var/lib/milo-home-observation/summary.json"
+# owner = "00000000-0000-4000-8000-000000000001"
+# backup_directory = "/var/backups/milo-home"
+# development_directory = "/srv/milo-home-development"
+# success_file = "/var/lib/milo-backup/last-success"
+# daily_unit = "milo-backup.service"

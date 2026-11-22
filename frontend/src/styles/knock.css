@@ -1,0 +1,95 @@
+/* 敲门：标题旁一个白纸小按钮加一扇门；敲过才在标题下撕出一张回执。敲成时门轻晃一下，低动效下不动。 */
+/* 标题行：标题占满剩余宽度，按钮贴在右边；窄屏放不下时按钮折到标题下面。 */
+.knock-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+}
+
+.knock-row > :first-child {
+  flex: 1 1 10rem;
+  min-width: 0;
+}
+
+/* 按钮和回执直接排进标题行，回执独占一行。 */
+.knock-door {
+  display: contents;
+}
+
+.knock-button {
+  flex: none;
+  min-height: 40px;
+  padding: 6px 14px;
+  font-size: 15px;
+}
+
+.knock-button[aria-disabled='true'],
+.knock-button[aria-disabled='true']:hover,
+.knock-button[aria-disabled='true']:active {
+  transform: none;
+  box-shadow: var(--press-offset) var(--press-offset) 0 color-mix(in srgb, var(--accent) 35%, #fff);
+  opacity: 0.6;
+  cursor: default;
+}
+
+.knock-glyph {
+  width: 14px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.knock-glyph circle {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.knock-receipt {
+  flex: 1 1 100%;
+  order: 1;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-top: 2px dashed var(--rule);
+  border-radius: 0 0 var(--radius-paper) var(--radius-paper);
+  background: var(--sheet);
+  color: var(--deep);
+  font-size: 14px;
+}
+
+.knock-receipt:empty {
+  display: none;
+}
+
+.knock-door.is-sending .knock-receipt {
+  color: var(--soft);
+}
+
+.knock-door.is-failed .knock-receipt,
+.knock-door.is-unknown .knock-receipt {
+  color: var(--error);
+}
+
+.knock-door.is-saved .knock-glyph {
+  transform-origin: 50% 100%;
+  animation: knock-sway 420ms ease-out;
+}
+
+@keyframes knock-sway {
+  25% {
+    transform: rotate(-6deg);
+  }
+
+  60% {
+    transform: rotate(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knock-door.is-saved .knock-glyph {
+    animation: none;
+  }
+}

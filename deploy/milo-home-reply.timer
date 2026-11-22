@@ -1,0 +1,11 @@
+[Unit]
+Description=Check saved Milo Home letters and chat every fifteen seconds
+
+[Timer]
+OnBootSec=15s
+OnUnitInactiveSec=15s
+AccuracySec=1s
+Unit=milo-home-reply.service
+
+[Install]
+WantedBy=timers.target

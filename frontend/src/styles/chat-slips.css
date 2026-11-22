@@ -1,0 +1,243 @@
+/* 纸条列表：来访者靠右暖白纸、米洛靠左方格纸，保留日期、待回与未确认发送状态。 */
+.chat-earlier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  margin: 0 auto var(--space-4);
+  padding: 6px 16px;
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-control);
+  background: color-mix(in srgb, var(--sheet) 76%, var(--paper));
+  box-shadow: none;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.chat-earlier:hover {
+  transform: none;
+  border-color: var(--ink);
+  background: var(--sheet);
+  box-shadow: 2px 3px 0 var(--shade);
+}
+
+.chat-earlier:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.chat-earlier.is-failed {
+  border-color: color-mix(in srgb, var(--error) 55%, var(--paper));
+  color: var(--error);
+}
+
+.chat-slips {
+  overflow-anchor: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.chat-day {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block: var(--space-3) var(--space-1);
+  color: var(--soft);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.chat-day::before,
+.chat-day::after {
+  content: '';
+  flex: 1;
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 22%, var(--paper));
+}
+
+.chat-slip {
+  max-width: min(82%, 560px);
+  padding: var(--space-2) var(--space-4) var(--space-3);
+  border-radius: var(--radius-paper);
+  scroll-margin-bottom: 156px;
+}
+
+.chat-slip:focus {
+  outline: none;
+}
+
+.chat-slip:focus-visible {
+  outline: 2px dashed var(--atext);
+  outline-offset: 2px;
+}
+
+.chat-slip.is-grouped {
+  margin-top: calc(-1 * var(--space-1));
+}
+
+.chat-slip.is-visitor {
+  align-self: flex-end;
+  background: var(--sheet);
+  box-shadow:
+    inset -3px 0 0 color-mix(in srgb, var(--accent) 42%, transparent),
+    0 1px 0 color-mix(in srgb, var(--ink) 9%, #e6e2d9),
+    3px 4px 0 var(--shade);
+}
+
+.chat-slip.is-milo {
+  --gridline: color-mix(in srgb, var(--ink) 7%, #fff);
+  align-self: flex-start;
+  background-color: var(--sheet);
+  background-image:
+    linear-gradient(var(--gridline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gridline) 1px, transparent 1px);
+  background-size: 18px 18px;
+  box-shadow:
+    inset 3px 0 0 color-mix(in srgb, var(--ink) 28%, transparent),
+    0 1px 0 color-mix(in srgb, var(--ink) 9%, #e6e2d9),
+    3px 4px 0 var(--shade);
+}
+
+.chat-waiting {
+  align-self: flex-end;
+  margin-top: calc(-1 * var(--space-1));
+  color: var(--soft);
+  font-size: 12px;
+  scroll-margin-bottom: 156px;
+}
+
+.chat-meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.chat-meta strong {
+  color: var(--deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chat-slip.is-milo .chat-meta strong {
+  color: var(--ink);
+}
+
+.chat-meta time {
+  font-variant-numeric: tabular-nums;
+}
+
+.chat-merged-note {
+  color: var(--soft);
+  font-size: 12px;
+}
+
+.chat-slip-note {
+  margin-top: var(--space-1);
+  padding-top: var(--space-1);
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 12%, var(--paper));
+  color: var(--soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.chat-body {
+  margin-top: 2px;
+  color: var(--deep);
+  font-size: 16px;
+  line-height: 1.72;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.chat-slip.is-sending {
+  opacity: 0.78;
+  box-shadow: none;
+  outline: 1.5px dashed color-mix(in srgb, var(--ink) 32%, transparent);
+  outline-offset: -1.5px;
+}
+
+.chat-slip.is-failed {
+  background: color-mix(in srgb, var(--error) 5%, var(--sheet));
+  box-shadow: none;
+  outline: 1.5px dashed var(--error);
+  outline-offset: -1.5px;
+}
+
+.chat-slip.is-unknown {
+  background: color-mix(in srgb, var(--accent) 8%, var(--sheet));
+  box-shadow: none;
+  outline: 1.5px dashed var(--atext);
+  outline-offset: -1.5px;
+}
+
+.chat-slip.is-failed .chat-outbox-state {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.chat-slip.is-unknown .chat-outbox-state {
+  color: var(--atext);
+  font-weight: 600;
+}
+
+.chat-retry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px dashed var(--rule);
+  color: var(--deep);
+  font-size: 13px;
+  scroll-margin-bottom: 156px;
+}
+
+.chat-retry-reason {
+  line-height: 1.5;
+}
+
+.chat-retry-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.chat-retry .text-button {
+  min-height: 40px;
+  font-size: 13px;
+  font-weight: 600;
+  scroll-margin-bottom: 156px;
+}
+
+@media (max-width: 600px) {
+  .chat-slip {
+    max-width: 90%;
+    padding: var(--space-2) var(--space-3) var(--space-3);
+  }
+}
+
+@media (max-width: 360px) {
+  .chat-slip {
+    max-width: 94%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-earlier {
+    transition: none;
+  }
+
+  .chat-earlier:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--deep);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  /* 装饰网点可以伸出版心，但不能带出横向滚动。 */
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--tint2);
+  color: var(--deep);
+}
+
+* {
+  scrollbar-color: var(--soft) var(--paper);
+  scrollbar-width: thin;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+/* 标题套印：浅色油墨错位叠在主色后面。 */
+.overprint {
+  text-shadow: 0.05em 0.04em 0 color-mix(in srgb, var(--accent) 80%, transparent);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 5px;
+}
+
+a:hover {
+  color: var(--atext);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+/* 控件：实心墨色或白纸，带油墨偏移影子；按下时下沉。 */
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 10px 18px;
+  border: var(--line-width) solid var(--ink);
+  border-radius: var(--radius-control);
+  background: var(--sheet);
+  color: var(--ink);
+  box-shadow: var(--press-offset) var(--press-offset) 0 var(--accent);
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1.4;
+  text-decoration: none;
+  transition:
+    transform var(--duration-press) ease,
+    box-shadow var(--duration-press) ease,
+    background-color var(--duration-press) ease;
+}
+
+button:hover,
+.button:hover {
+  color: var(--ink);
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--accent);
+}
+
+button:active,
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--accent);
+}
+
+.primary,
+.primary:hover {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 900;
+}
+
+/* 忙碌时只标 aria-disabled 的按钮外观相同，但仍能拿着键盘焦点。 */
+button:disabled,
+button:disabled:hover,
+button:disabled:active,
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
+button[aria-disabled='true']:active {
+  transform: none;
+  box-shadow: var(--press-offset) var(--press-offset) 0 color-mix(in srgb, var(--accent) 35%, #fff);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 文字按钮：去掉纸面和影子，只留一道油墨下划线。 */
+.text-button,
+.text-button:hover,
+.text-button:active,
+.text-button:disabled,
+.text-button[aria-disabled='true'] {
+  padding-inline: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.text-button:hover {
+  color: var(--atext);
+}
+
+button[aria-busy='true'] {
+  cursor: wait;
+}
+
+:focus-visible {
+  outline: 2px dashed var(--atext);
+  outline-offset: 4px;
+}
+
+main:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: var(--line-width) solid var(--ink);
+  border-radius: 6px;
+  background-color: var(--sheet);
+  color: var(--deep);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: color-mix(in srgb, var(--soft) 80%, #fff);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px dashed var(--ink);
+  outline-offset: 3px;
+}
+
+input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 144px;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.muted,
+.small-note {
+  color: var(--soft);
+}
+
+.small-note {
+  font-size: 13px;
+}
+
+.feedback {
+  min-height: 26px;
+  margin-top: var(--space-3);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.feedback.error {
+  color: var(--error);
+  font-weight: 500;
+}
+
+/* 手写旁白：只放装饰性或重复说明的文字。 */
+.hand {
+  color: var(--atext);
+  font-family: var(--font-hand);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 两色重叠处做正片叠底，模拟套印。 */
+.mul {
+  mix-blend-mode: multiply;
+}
+
+.grid-paper {
+  background-color: var(--sheet);
+  background-image:
+    linear-gradient(var(--gridline) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gridline) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.dots {
+  background-image: radial-gradient(var(--accent) 1.3px, transparent 1.6px);
+  background-size: 8px 8px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  transform: translateY(-180%);
+  padding: 8px 16px;
+  border-radius: var(--radius-control);
+  background: var(--ink);
+  color: #fff;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

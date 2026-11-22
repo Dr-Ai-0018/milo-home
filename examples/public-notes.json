@@ -1,0 +1,281 @@
+{
+  "synthetic": true,
+  "description": "公开近况首片合成契约样例；不是已部署接口或真实生活记录。",
+  "scenarios": [
+    {
+      "name": "home_latest_three",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?limit=3"
+      },
+      "status": 200,
+      "response": {
+        "notes": [
+          {
+            "id": "10000000-0000-4000-8000-000000000003",
+            "sequence": 3,
+            "revision": 1,
+            "title": "合成近况 3：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": "合成样例",
+            "content_date": "2026-11-21",
+            "published_at": 1795329003,
+            "updated_at": 1795329003
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000002",
+            "sequence": 2,
+            "revision": 1,
+            "title": "合成近况 2：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": null,
+            "content_date": "2026-11-21",
+            "published_at": 1795329002,
+            "updated_at": 1795329002
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "sequence": 1,
+            "revision": 1,
+            "title": "合成近况 1：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": "合成样例",
+            "content_date": "2026-11-21",
+            "published_at": 1795329001,
+            "updated_at": 1795329001
+          }
+        ],
+        "next_before": null
+      },
+      "expectation": "首页显示最近三条；分类null不画空标签。"
+    },
+    {
+      "name": "history_first_page",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?limit=2"
+      },
+      "status": 200,
+      "response": {
+        "notes": [
+          {
+            "id": "10000000-0000-4000-8000-000000000003",
+            "sequence": 3,
+            "revision": 1,
+            "title": "合成近况 3：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": "合成样例",
+            "content_date": "2026-11-21",
+            "published_at": 1795329003,
+            "updated_at": 1795329003
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000002",
+            "sequence": 2,
+            "revision": 1,
+            "title": "合成近况 2：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": null,
+            "content_date": "2026-11-21",
+            "published_at": 1795329002,
+            "updated_at": 1795329002
+          }
+        ],
+        "next_before": 2
+      },
+      "expectation": "显示下一页入口，cursor=2。"
+    },
+    {
+      "name": "history_last_page",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?limit=2&before=2"
+      },
+      "status": 200,
+      "response": {
+        "notes": [
+          {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "sequence": 1,
+            "revision": 1,
+            "title": "合成近况 1：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": "合成样例",
+            "content_date": "2026-11-21",
+            "published_at": 1795329001,
+            "updated_at": 1795329001
+          }
+        ],
+        "next_before": null
+      },
+      "expectation": "结束翻页；新发布sequence=4不改变已读页边界。"
+    },
+    {
+      "name": "history_empty_page",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?before=1"
+      },
+      "status": 200,
+      "response": {
+        "notes": [],
+        "next_before": null
+      },
+      "expectation": "已读内容保留，提示没有更早公开近况，不把整站说成空。"
+    },
+    {
+      "name": "true_empty",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes"
+      },
+      "status": 200,
+      "response": {
+        "notes": [],
+        "next_before": null
+      },
+      "expectation": "真实空态，不回填随站旧内容。"
+    },
+    {
+      "name": "detail_plain_text",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes/10000000-0000-4000-8000-000000000003"
+      },
+      "status": 200,
+      "response": {
+        "id": "10000000-0000-4000-8000-000000000003",
+        "sequence": 3,
+        "revision": 1,
+        "title": "合成近况 3：一件已经核对的小事",
+        "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+        "category": "合成样例",
+        "content_date": "2026-11-21",
+        "published_at": 1795329003,
+        "updated_at": 1795329003,
+        "body": "这是合成正文的第一段。\n\n第二段保留换行。<script>alert(1)</script> 必须作为文字展示，不能执行。"
+      },
+      "expectation": "段落可读，HTML样式文本不能解释执行。"
+    },
+    {
+      "name": "detail_long_text",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes/10000000-0000-4000-8000-000000000002"
+      },
+      "status": 200,
+      "response": {
+        "id": "10000000-0000-4000-8000-000000000002",
+        "sequence": 2,
+        "revision": 1,
+        "title": "合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题合成长标题",
+        "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+        "category": null,
+        "content_date": "2026-11-21",
+        "published_at": 1795329002,
+        "updated_at": 1795329002,
+        "body": "这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n这是一段合成长文。\n"
+      },
+      "expectation": "长标题与正文在320/390px不溢出。"
+    },
+    {
+      "name": "explicitly_revised",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes/10000000-0000-4000-8000-000000000003"
+      },
+      "status": 200,
+      "response": {
+        "id": "10000000-0000-4000-8000-000000000003",
+        "sequence": 3,
+        "revision": 2,
+        "title": "合成近况 3：一件已经核对的小事",
+        "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+        "category": "合成样例",
+        "content_date": "2026-11-21",
+        "published_at": 1795329003,
+        "updated_at": 1795329063,
+        "body": "这是明确发布后的第二版合成正文；待发布草稿不能从公开API读到。"
+      },
+      "expectation": "公开修订号与更新时间改变，sequence及首次published_at保留。"
+    },
+    {
+      "name": "withdrawn_or_missing",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes/10000000-0000-4000-8000-000000000001"
+      },
+      "status": 404,
+      "response": {
+        "error": {
+          "code": "note_not_found",
+          "message": "这条近况当前不可读取。"
+        }
+      },
+      "expectation": "撤下/草稿/不存在同样404，不回退静态正文。"
+    },
+    {
+      "name": "legacy_endpoint_missing",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?limit=3"
+      },
+      "status": 404,
+      "response": {
+        "detail": "Not Found"
+      },
+      "expectation": "仅列表404兼容旧后端，显示标记的随站旧近况，不造历史入口。"
+    },
+    {
+      "name": "temporary_unavailable",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?limit=3"
+      },
+      "status": 503,
+      "response": {
+        "error": {
+          "code": "database_busy",
+          "message": "记录暂时繁忙，请稍后重读。"
+        }
+      },
+      "expectation": "首次失败给局部重读，刷新失败保上次值及焦点；不当作空列表或静态回退。"
+    },
+    {
+      "name": "successful_refresh_after_withdrawal",
+      "request": {
+        "method": "GET",
+        "path": "/api/notes?limit=3"
+      },
+      "status": 200,
+      "response": {
+        "notes": [
+          {
+            "id": "10000000-0000-4000-8000-000000000003",
+            "sequence": 3,
+            "revision": 1,
+            "title": "合成近况 3：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": "合成样例",
+            "content_date": "2026-11-21",
+            "published_at": 1795329003,
+            "updated_at": 1795329003
+          },
+          {
+            "id": "10000000-0000-4000-8000-000000000001",
+            "sequence": 1,
+            "revision": 1,
+            "title": "合成近况 1：一件已经核对的小事",
+            "summary": "这是明确标记的合成公开近况，用于验证阅读和翻页，不代表真实经历。",
+            "category": "合成样例",
+            "content_date": "2026-11-21",
+            "published_at": 1795329001,
+            "updated_at": 1795329001
+          }
+        ],
+        "next_before": null
+      },
+      "expectation": "若旧结果有sequence2，成功刷新后移除；不继续从本地缓存拼回。"
+    }
+  ]
+}
